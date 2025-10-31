@@ -1,0 +1,37 @@
+# Obsidian vault files
+.obsidian/
+
+# Python
+__pycache__/
+*.py[cod]
+*$py.class
+*.so
+.Python
+env/
+venv/
+ENV/
+.venv
+
+# Large binary files (comment out if you want to track results)
+# *.png
+# *.pdf
+# *.jpg
+# *.jpeg
+# *.gif
+
+# IDE
+.vscode/
+.idea/
+*.swp
+*.swo
+*~
+
+# OS
+.DS_Store
+Thumbs.db
+
+# Temporary files
+*.tmp
+*.log
+*.bak
+
