@@ -1,0 +1,196 @@
+{
+  "main": {
+    "id": "12fb2622c0ac3a55",
+    "type": "split",
+    "children": [
+      {
+        "id": "5d5528b3d3b68b5c",
+        "type": "tabs",
+        "children": [
+          {
+            "id": "64b77c8869d31088",
+            "type": "leaf",
+            "state": {
+              "type": "pdf",
+              "state": {
+                "file": "resources/papers/ModelingBarretteFoundationsunderLateralLoads.pdf"
+              },
+              "icon": "lucide-file-text",
+              "title": "ModelingBarretteFoundationsunderLateralLoads"
+            }
+          }
+        ]
+      }
+    ],
+    "direction": "vertical"
+  },
+  "left": {
+    "id": "15a4e08aaf5164ed",
+    "type": "split",
+    "children": [
+      {
+        "id": "08d5b09a04285b8f",
+        "type": "tabs",
+        "children": [
+          {
+            "id": "cd912919779f798a",
+            "type": "leaf",
+            "state": {
+              "type": "file-explorer",
+              "state": {
+                "sortOrder": "alphabetical",
+                "autoReveal": false
+              },
+              "icon": "lucide-folder-closed",
+              "title": "Files"
+            }
+          },
+          {
+            "id": "034617d3f4ffa1ad",
+            "type": "leaf",
+            "state": {
+              "type": "search",
+              "state": {
+                "query": "",
+                "matchingCase": false,
+                "explainSearch": false,
+                "collapseAll": false,
+                "extraContext": false,
+                "sortOrder": "alphabetical"
+              },
+              "icon": "lucide-search",
+              "title": "Search"
+            }
+          },
+          {
+            "id": "ac9471a10cceb931",
+            "type": "leaf",
+            "state": {
+              "type": "bookmarks",
+              "state": {},
+              "icon": "lucide-bookmark",
+              "title": "Bookmarks"
+            }
+          }
+        ]
+      }
+    ],
+    "direction": "horizontal",
+    "width": 300
+  },
+  "right": {
+    "id": "8c61a7f2f069c26a",
+    "type": "split",
+    "children": [
+      {
+        "id": "3fc33e501f224c15",
+        "type": "tabs",
+        "children": [
+          {
+            "id": "0304d7112e8ef492",
+            "type": "leaf",
+            "state": {
+              "type": "backlink",
+              "state": {
+                "file": "plan.md",
+                "collapseAll": false,
+                "extraContext": false,
+                "sortOrder": "alphabetical",
+                "showSearch": false,
+                "searchQuery": "",
+                "backlinkCollapsed": false,
+                "unlinkedCollapsed": true
+              },
+              "icon": "links-coming-in",
+              "title": "Backlinks for plan"
+            }
+          },
+          {
+            "id": "69629911fe384522",
+            "type": "leaf",
+            "state": {
+              "type": "outgoing-link",
+              "state": {
+                "file": "plan.md",
+                "linksCollapsed": false,
+                "unlinkedCollapsed": true
+              },
+              "icon": "links-going-out",
+              "title": "Outgoing links from plan"
+            }
+          },
+          {
+            "id": "17ed9cdd0143ad06",
+            "type": "leaf",
+            "state": {
+              "type": "tag",
+              "state": {
+                "sortOrder": "frequency",
+                "useHierarchy": true,
+                "showSearch": false,
+                "searchQuery": ""
+              },
+              "icon": "lucide-tags",
+              "title": "Tags"
+            }
+          },
+          {
+            "id": "dfdaaf9bf19ce141",
+            "type": "leaf",
+            "state": {
+              "type": "outline",
+              "state": {
+                "file": "plan.md",
+                "followCursor": false,
+                "showSearch": false,
+                "searchQuery": ""
+              },
+              "icon": "lucide-list",
+              "title": "Outline of plan"
+            }
+          }
+        ]
+      }
+    ],
+    "direction": "horizontal",
+    "width": 300,
+    "collapsed": true
+  },
+  "left-ribbon": {
+    "hiddenItems": {
+      "switcher:Open quick switcher": false,
+      "graph:Open graph view": false,
+      "canvas:Create new canvas": false,
+      "daily-notes:Open today's daily note": false,
+      "templates:Insert template": false,
+      "command-palette:Open command palette": false,
+      "bases:Create new base": false,
+      "vim-toggle:Toggle Vim Mode": false
+    }
+  },
+  "active": "64b77c8869d31088",
+  "lastOpenFiles": [
+    "plan.md",
+    "resources/HOW_TO_ANALYZE_BARRETTES.md",
+    "CURSOR_AGENT_SWITCHING.md",
+    "resources/papers/ModelingBarretteFoundationsunderLateralLoads.pdf",
+    "resources/download_links.md",
+    "resources/textbooks/Pile_Foundation_Analysis_and_Design_H_G.pdf",
+    "resources/codes_manuals/ ICE Specification for Piling and Embedded Retaining Walls.pdf",
+    "resources/codes_manuals/FHWA-NHI-18-025.pdf",
+    "resources/codes_manuals/FHWA-NHI-18-024.pdf",
+    "resources/documentation/ ICE Specification for Piling and Embedded Retaining Walls.pdf",
+    "resources/textbooks/A SPON PRESS BOOK Pile Design and Construction Practice.pdf",
+    "resources/CURRENT_DOWNLOADS.md",
+    "resources/COMPLETE_DOWNLOAD_SUMMARY.md",
+    "resources/CODES_MANUALS_SUMMARY.md",
+    "resources/DOWNLOAD_SUMMARY.md",
+    "resources/RESEARCH_PAPERS_SEARCH_GUIDE.md",
+    "resources/BARRETTE_APPLICATIONS_AND_SOURCES.md",
+    "resources/codes_manuals/FHWA-GEC-11-Driven-Piles-Full.pdf",
+    "resources/DOWNLOAD_SUMMARY_CODES.md",
+    "resources/codes_manuals/AASHTO-LRFD-Deep-Foundations.pdf",
+    "resources/codes_manuals/FHWA-IF-99-025-Settlement-Analysis.pdf",
+    "resources/codes_manuals_download_links.md"
+  ]
+}

@@ -1,0 +1,1245 @@
+
+<!DOCTYPE html>
+<html  lang="en" dir="ltr">
+<head>
+  <meta charset="utf-8" />
+<meta name="Generator" content="Drupal 10 (https://www.drupal.org)" />
+<meta name="MobileOptimized" content="width" />
+<meta name="HandheldFriendly" content="true" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<meta name="og:title" content="DOT ROSA P" />
+<meta name="og:description" content="ROSA P serves as an archival repository of USDOT-published products including scientific findings, journal articles, guidelines, recommendations, or other information authored or co-authored by USDOT or funded partners. As a repository, ROSA P retains documents in their original published format to ensure public access to scientific information." />
+<meta name="og:image" content="https://rosap.ntl.bts.gov/themes/custom/dot/images/dot_searchBar_logo1184-481.png" />
+<meta name="og:url" content="https://rosap.ntl.bts.gov" />
+<meta name="og:type" content="website" />
+<meta name="description" content="Driving risk could increase as roadway conditions become more hazardous because of adverse weather conditions. This could lead to an increase in crash frequencies. About 24 percent of all reported motor vehicle crashes in the United States are related to weather conditions. Adverse winter weather may affect driver behavior because of the hazardous driving conditions it can create. These hazardous conditions force individual drivers to react accordingly by modifying their individual headway and speed. Every driver chooses their individual speed according to their own perception of the weather severity, which may lead to higher speed variations, which in turn have resulted in increases in crash frequencies. Therefore, better understanding of the impacts of adverse weather conditions may be helpful in reducing crashes and improving safety. The objectives of this study were to address the relationship and impacts of adverse weather conditions on speed selection behavior. In addition, we examined how the change in speed behavior during a winter storm will affect microscopic behavior with resulting impacts on headways and spacing. The data collected along different corridors of I-80 in Wyoming during winter storms were used for the analysis." />
+<meta name="citation_title" content="Speed Selection During Winter Road Conditions" />
+<meta name="citation_author" content="Thapa, Sandeep" />
+<meta name="citation_author" content="Young, Rhonda" />
+<meta name="citation_keywords" content="Behavior" />
+<meta name="citation_keywords" content="Drivers" />
+<meta name="citation_keywords" content="Headways" />
+<meta name="citation_keywords" content="Microsimulation" />
+<meta name="citation_keywords" content="Operating speed" />
+<meta name="citation_keywords" content="Vehicle spacing" />
+<meta name="citation_keywords" content="Weather conditions" />
+<meta name="citation_keywords" content="Winter" />
+<meta name="citation_publication_date" content="2019/08/01" />
+<meta name="citation_fulltext_html_url" content="http://rosap.ntl.bts.gov/view/dot/62258" />
+<meta name="citation_pdf_url" content="http://rosap.ntl.bts.gov/view/dot/62258/dot_62258_DS1.pdf" />
+<meta name="citation_language" content="English" />
+<meta name="citation_abstract" content="Driving risk could increase as roadway conditions become more hazardous because of adverse weather conditions. This could lead to an increase in crash frequencies. About 24 percent of all reported motor vehicle crashes in the United States are related to weather conditions. Adverse winter weather may affect driver behavior because of the hazardous driving conditions it can create. These hazardous conditions force individual drivers to react accordingly by modifying their individual headway and speed. Every driver chooses their individual speed according to their own perception of the weather severity, which may lead to higher speed variations, which in turn have resulted in increases in crash frequencies. Therefore, better understanding of the impacts of adverse weather conditions may be helpful in reducing crashes and improving safety. The objectives of this study were to address the relationship and impacts of adverse weather conditions on speed selection behavior. In addition, we examined how the change in speed behavior during a winter storm will affect microscopic behavior with resulting impacts on headways and spacing. The data collected along different corridors of I-80 in Wyoming during winter storms were used for the analysis." />
+<link rel="icon" href="/themes/custom/dot/favicon.ico" type="image/vnd.microsoft.icon" />
+
+  <title>Speed Selection During Winter Road Conditions</title>
+  <link rel="stylesheet" media="all" href="/sites/default/files/css/css_27MuXzS5bvUoKCrUrCQqJJWlQiWToRi-H8_z-vbdLOc.css?delta=0&amp;language=en&amp;theme=dot&amp;include=eJzzT8pKTS4Jy0wt1_eHM-NzMpOKEosqdVLyS_SBWBfI1ymuLC5JzdVPSixOBQAk1BRQ" />
+<link rel="stylesheet" media="all" href="/sites/default/files/css/css_fFMjwnnUGtJdeMCgc6_NIHjb21GsUQPRec-VLWLVJms.css?delta=1&amp;language=en&amp;theme=dot&amp;include=eJzzT8pKTS4Jy0wt1_eHM-NzMpOKEosqdVLyS_SBWBfI1ymuLC5JzdVPSixOBQAk1BRQ" />
+
+  
+</head>
+<body>
+    <a href="#mainTitle" class="visually-hidden focusable skip-link">
+      Skip to main content
+    </a>
+    
+    
+      <div class="dialog-off-canvas-main-canvas" data-off-canvas-main-canvas>
+    
+
+<div id="wrapper">
+	<div id="wrapper-inner">
+				<header>
+	<section class="official-notice container noindex noprint">
+		<div class="pt-3 pb-3">
+			<div class="official-notice__notice">
+				<img  class="usa-banner__header-flag"
+					src="/themes/custom/dot/images/uswds/us_flag_small.png"
+					alt="U.S. flag" width="16" height="11"> <span>An
+					official website of the United States government.</span> <a
+					href="#gov-notice" role="button" aria-expanded="false"
+					aria-controls="gov-notice" class="collapsed"> Here's how you
+					know <i class="cdc-fa-angle-down" ></i>
+				</a>
+			</div>
+		</div>
+		<div class="collapse" id="gov-notice" style="">
+			<div class="row">
+				<div class="col-12 col-lg-6">
+					<img src="/themes/custom/dot/images/uswds/icon-dot-gov.svg" alt=""
+						>
+					<div>
+						<b>Official websites use .gov</b>
+						<p>A .gov website belongs to an official government
+							organization in the United States.</p>
+					</div>
+				</div>
+				<div class="col-12 col-lg-6">
+					<img src="/themes/custom/dot/images/uswds/icon-https.svg" alt=""
+						>
+					<div>
+						<b>Secure .gov websites use HTTPS</b>
+						<p>
+							A <strong>lock</strong> ( <i class="cdc-icon-lock-01"
+								></i> ) or <strong>https://</strong> means
+							you've safely connected to the .gov website. Share sensitive
+							information only on official, secure websites.
+						</p>
+					</div>
+				</div>
+			</div>
+		</div>
+	</section>
+	<section id="info-header">
+		<div class="container pt-2 pb-2">
+			<div class="info-header-link">
+				<div>
+					<a target="_blank" href="https://www.transportation.gov/" class="white hover-decoration"><img id="dotRibbonLogo"
+							alt="Dot Ribbon Logo" width="17" height="18"
+							src="/themes/custom/dot/images/dot_ribbon_logo.png">
+						United States Department of Transportation
+					</a>
+				</div>
+				<div>
+					<a target="_blank" href="http://ntl.bts.gov/" class="white"><b>National Transportation Library</b></a>
+				</div>
+				<div>
+					<a target="_blank" href="https://www.bts.gov/" class="white hover-decoration">Bureau of Transportation Statistics</a>
+				</div>
+			</div>
+		</div>
+	</section>
+	<section class="mobile-menu">
+		<div class="container">
+			<div class="row justify-content-between">
+				<div class="pt-2 pb-2 col-2 navbar-logo">
+					<img alt="CDC"
+						class="header-logo" src="/themes/custom/dot/images/logo/logo.svg" />
+				</div>
+				<div class="col-9 d-flex justify-content-end">
+					<button title="Search" class="btn align-items-center"
+						id="mobileSearchNav">
+						<i class="cdc-fa-magnifying-glass mr-2"></i>
+					</button>
+				</div>
+				<div class="col-9 align-content-center" style="display: none">
+					<div class="container">
+						<form id='mobileNavbarSearchForm' action="/gsearch">
+							<div class="row">
+								<input type="search" placeholder="Search ROSA P"
+									name="terms" class="pl-4 col-10" />
+								<button alt='' type="button" aria-label="Close"
+									class="pl-1 btn col-2">
+									<span class="cdc-icon-close"></span>
+								</button>
+							</div>
+						</form>
+					</div>
+				</div>
+			</div>
+
+		</div>
+	</section>
+	<section>
+		<!--Menu construction-->
+		<div class="row" id="menu-row">
+			<!--menu row-->
+			<div class="col-12" id="menu-column">
+				<nav aria-label="Top navigation">
+					<div class="navbar navbar-default navbar-static-top mb-0">
+						<div class="row navbar-row">
+							<div class="container p-0">
+								<div class="pt-2 pb-2 pr-0 col-auto navbar-logo d-flex">
+									<img alt="DOT"
+										class="header-logo" src="/themes/custom/dot/images/logo/logo.svg" />
+									<img alt="" class="header-logo-text" src="/themes/custom/dot/images/logo/logo_text.svg" />
+								</div>
+								<div class='mobile-menu mr-2'>
+									<button id='mobile-menu-btn'
+										class='btn cdc-mobile-btn btn-outline-primary'>
+										<span class="collapse show">Menu <span
+											class="cdc-fa-angle-down pl-1" ></span></span> <span
+											class="collapse">Close<span
+											class="cdc-icon-close align-middle pl-1"></span></span>
+									</button>
+								</div>
+								<!--End Navbar header-->
+								<div id="main-menu"
+									class="desktop-show col-auto p-0 align-self-end">
+									<ul class="nav navbar-nav navbar-left">
+																				<li class='left-nav-options'><a id="welcomeHeader"
+											href="/">Home</a></li>
+																														<li class='left-nav-options'><a id="collectionHeader"
+											href="/browse/collections">Collections</a></li>
+																														<li class='left-nav-options'><a id="recentHeader"
+											href="/browse/recent">Recent Additions</a></li>
+																				<li class='left-nav-options'><a target="_blank" id="publicAccessHeader"
+											href="https://doi.org/10.21949/1503647">Public Access</a></li>
+																				<li class='left-nav-options'><a id="submitHeader"
+											href="/submitContent">Submit Content</a></li>
+																														<li class='left-nav-options'><a id="helpHeader"
+											href="/help">Help</a></li>
+																				<li class="left-nav-options"><a href='#'
+											id="navbarSearch"> <i
+												class="cdc-fa-magnifying-glass mr-2"></i>Search
+										</a></li>
+									</ul>
+									<div class="nav navbar-nav navbar-left h-100 justify-content-center">
+										<form id='navbarSearchForm' style="display: none"
+											action="/gsearch">
+											<input type="search" placeholder="Search ROSA P"
+												name="terms" class="pl-4" />
+											<button type="submit" aria-label="Search">
+												<span class="cdc-fa-magnifying-glass"></span>
+											</button>
+											<button type="button" aria-label="Close" class="pl-1">
+												<span class="cdc-icon-close"></span>
+											</button>
+										</form>
+									</div>
+								</div>
+								<!--end main menu-->
+							</div>
+
+							<!--End right menu column-->
+						</div>
+						<!--end inner menu row-->
+					</div>
+					<div class='row mobile-menu'>
+						<div class='container'>
+							<ul aria-expanded='false' id="mobile-main-menu" class='collapse'>
+								<li class='left-nav-options'><a id="welcomeHeader"
+									href="/">Home</a></li>
+								<li class='left-nav-options'><a id="collectionHeader"
+									href="/browse/collections">Collections</a></li>
+								<li class='left-nav-options'><a id="recentHeader"
+									href="/browse/recent">Recent Additions</a></li>
+								<li class='left-nav-options'><a target="_blank" id="publicAccessHeader"
+									href="https://doi.org/10.21949/1503647">Public Access</a></li>
+								<li class='left-nav-options'><a id="submitHeader"
+									href="/submitContent">Submit Content</a></li>
+								<li class='left-nav-options'><a id="helpHeader"
+									href="/help">Help</a></li>
+								<li class='left-nav-options'><a id="aboutHeader"
+									href="/about">About</a></li>
+								<li class='left-nav-options'><a id="contactHeader"
+									href="/contact">Contact Us</a></li>
+							</ul>
+						</div>
+					</div>
+				</nav>
+				<!--End navbar-->
+			</div>
+			<!--End menu column-->
+		</div>
+		<!--End Menu Row-->
+	</section>
+</header>		
+<!-- Modal -->
+<div class="modal fade" id="searchModal" tabindex="-1" role="dialog"
+	aria-labelledby="header-search-modal" aria-hidden="true"
+	aria-modal="true">
+	<div class="modal-dialog" role="document">
+		<div class="modal-content">
+			<button type="button" class="close" data-dismiss="modal"
+				aria-label="Close">
+				<span aria-hidden="true">&times;</span>
+			</button>
+			<div class="modal-body">
+				<form id="modal-gsearch" action='/gsearch' method="get">
+					<input id='txt-search-box-mobile' type="search" name="terms"
+						title="Search ROSA P Collections" autocomplete="off"
+						value=""
+						placeholder="Search ROSA P Collections" id="terms"
+						title="Search Box" aria-label="Search Box"
+						class="searchBox clearable form-control" />
+					<div class="stacks-select">
+						<select
+							id="modal-collection" name="collection"
+							class="collectionList form-control"
+							title="Collection List Dropdown"
+							aria-label="Collection List Dropdown"> 
+														<option value="dot:83952" id="gtmGlobalCollectionModal-dot:83952"
+															>Autonomous Vehicles</option>
+														<option value="dot:79772" id="gtmGlobalCollectionModal-dot:79772"
+															>BTS Data Spotlight</option>
+														<option value="dot:54681" id="gtmGlobalCollectionModal-dot:54681"
+															>BTS Maritime and Ports</option>
+														<option value="dot:35533" id="gtmGlobalCollectionModal-dot:35533"
+															>BTS Products</option>
+														<option value="dot:78678" id="gtmGlobalCollectionModal-dot:78678"
+															>CAA and FAA Reports</option>
+														<option value="dot:64918" id="gtmGlobalCollectionModal-dot:64918"
+															>Civil Aeronautics Manuals</option>
+														<option value="dot:50942" id="gtmGlobalCollectionModal-dot:50942"
+															>Civil Aeronautics Regulations</option>
+														<option value="dot:60429" id="gtmGlobalCollectionModal-dot:60429"
+															>CMTS</option>
+														<option value="dot:55259" id="gtmGlobalCollectionModal-dot:55259"
+															>Commodity Flow Survey</option>
+														<option value="dot:83174" id="gtmGlobalCollectionModal-dot:83174"
+															>DOT Administrators&#039; Speeches and Writings</option>
+														<option value="dot:65448" id="gtmGlobalCollectionModal-dot:65448"
+															>FAA Advisory Circulars</option>
+														<option value="dot:56177" id="gtmGlobalCollectionModal-dot:56177"
+															>FAA Civil Aerospace Medical Institute</option>
+														<option value="dot:57609" id="gtmGlobalCollectionModal-dot:57609"
+															>FAA Technical Library</option>
+														<option value="dot:72709" id="gtmGlobalCollectionModal-dot:72709"
+															>FCSM</option>
+														<option value="dot:53566" id="gtmGlobalCollectionModal-dot:53566"
+															>Federal Aviation Administration</option>
+														<option value="dot:75690" id="gtmGlobalCollectionModal-dot:75690"
+															>Federal Aviation Regulations</option>
+														<option value="dot:232" id="gtmGlobalCollectionModal-dot:232"
+															>Federal Highway Administration</option>
+														<option value="dot:68732" id="gtmGlobalCollectionModal-dot:68732"
+															>Federal Lands</option>
+														<option value="dot:1" id="gtmGlobalCollectionModal-dot:1"
+															>Federal Motor Carrier Safety Administration</option>
+														<option value="dot:41012" id="gtmGlobalCollectionModal-dot:41012"
+															>Federal Railroad Administration</option>
+														<option value="dot:42631" id="gtmGlobalCollectionModal-dot:42631"
+															>Federal Transit Administration</option>
+														<option value="dot:241" id="gtmGlobalCollectionModal-dot:241"
+															>FTA 50th Anniversary Collection</option>
+														<option value="dot:32931" id="gtmGlobalCollectionModal-dot:32931"
+															>Investigations of Aircraft Accidents 1934-1965</option>
+														<option value="dot:44452" id="gtmGlobalCollectionModal-dot:44452"
+															>Investigations of Railroad Accidents 1911-1993</option>
+														<option value="dot:239" id="gtmGlobalCollectionModal-dot:239"
+															>ITSJPO Digital Library</option>
+														<option value="dot:68794" id="gtmGlobalCollectionModal-dot:68794"
+															>National Conferences on Street and Highway Safety</option>
+														<option value="dot:38236" id="gtmGlobalCollectionModal-dot:38236"
+															>National Transportation Data Archive</option>
+														<option value="dot:54445" id="gtmGlobalCollectionModal-dot:54445"
+															>National Transportation Library Publications</option>
+														<option value="dot:83173" id="gtmGlobalCollectionModal-dot:83173"
+															>Newsletters</option>
+														<option value="dot:78352" id="gtmGlobalCollectionModal-dot:78352"
+															>News Releases</option>
+														<option value="dot:242" id="gtmGlobalCollectionModal-dot:242"
+															>NHTSA - Behavioral Safety Research</option>
+														<option value="dot:40796" id="gtmGlobalCollectionModal-dot:40796"
+															>NHTSA - Vehicle Safety Research</option>
+														<option value="dot:53565" id="gtmGlobalCollectionModal-dot:53565"
+															>NTAD Archive</option>
+														<option value="dot:83172" id="gtmGlobalCollectionModal-dot:83172"
+															>OST-R Data Collection</option>
+														<option value="dot:41930" id="gtmGlobalCollectionModal-dot:41930"
+															>PHMSA Collection</option>
+														<option value="dot:79163" id="gtmGlobalCollectionModal-dot:79163"
+															>Ports Resilience</option>
+														<option value="dot:54598" id="gtmGlobalCollectionModal-dot:54598"
+															>Public Access Resources</option>
+														<option value="dot:58550" id="gtmGlobalCollectionModal-dot:58550"
+															>Public Roads Magazine</option>
+														<option value="dot:73448" id="gtmGlobalCollectionModal-dot:73448"
+															>Secretary of Transportation Speeches</option>
+														<option value="dot:82036" id="gtmGlobalCollectionModal-dot:82036"
+															>SMART Program</option>
+														<option value="dot:73449" id="gtmGlobalCollectionModal-dot:73449"
+															>State Road Maps</option>
+														<option value="dot:36269" id="gtmGlobalCollectionModal-dot:36269"
+															>Transportation Librarians Roundtable</option>
+														<option value="dot:54849" id="gtmGlobalCollectionModal-dot:54849"
+															>Transportation Resilience &amp; Vulnerability Collection</option>
+														<option value="dot:60430" id="gtmGlobalCollectionModal-dot:60430"
+															>University Transportation Centers</option>
+														<option value="dot:62791" id="gtmGlobalCollectionModal-dot:62791"
+															>US Coast Guard Circulars</option>
+														<option value="dot:35446" id="gtmGlobalCollectionModal-dot:35446"
+															>US DOT Public Access Data Management Plans</option>
+														<option value="dot:706" id="gtmGlobalCollectionModal-dot:706"
+															>US Transportation Collection</option>
+														<option value="dot:231" id="gtmGlobalCollectionModal-dot:231"
+															>Volpe Center</option>
+													</select>
+						<i class="cdc-fa-angle-down"></i>
+					</div>
+					<button class="searchModalIcon" type="submit">
+						<svg xmlns="http://www.w3.org/2000/svg"
+							xmlns:xlink="http://www.w3.org/1999/xlink" version="1.1"
+							baseProfile="full" width="24" height="24"
+							viewBox="0 0 24.00 24.00" enable-background="new 0 0 24.00 24.00"
+							xml:space="preserve">
+								<title>Search</title>
+                        	<path fill="#0A4595" fill-opacity="1"
+								stroke-width="0.2" stroke-linejoin="round"
+								d="M 9.5,3C 13.0899,3 16,5.91015 16,9.5C 16,11.1149 15.411,12.5923 14.4362,13.7291L 14.7071,14L 15.5,14L 20.5,19L 19,20.5L 14,15.5L 14,14.7071L 13.7291,14.4362C 12.5923,15.411 11.1149,16 9.5,16C 5.91015,16 3,13.0899 3,9.5C 3,5.91015 5.91015,3 9.5,3 Z M 9.5,5.00001C 7.01472,5.00001 5,7.01473 5,9.50001C 5,11.9853 7.01472,14 9.5,14C 11.9853,14 14,11.9853 14,9.50001C 14,7.01473 11.9853,5.00001 9.5,5.00001 Z " />
+						</svg>
+					</button>
+				</form>
+			</div>
+			<div class="modal-footer">
+				<a id="advanceSearchLinkModal" class="advance-search-link noMod"
+					href="/advancesearch">Advanced Search</a>
+			</div>
+		</div>
+	</div>
+</div>		<main>
+						<div class="col-12 bookHeaderListData">
+								<div class="record-note
+					">
+					<div class="container d-flex">
+						<span class="circle">  <i>i</i> 						</span>
+						<div class="text-contain">
+													</div>
+					</div>
+				</div>
+								
+							</div>
+						<div class="container" id="page">
+				<div id="main" class="main-full">
+					<div id="content">
+						  <div>
+    <div id="block-dot-content">
+  
+    
+      <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.1/umd/popper.min.js"></script>
+<div class="page-view">
+							<div class="container-fluid" id="doc-viewr-container">
+		<div id="doc_details_top_row">
+			<h1 id="mainTitle" class="title">
+				Speed Selection During Winter Road Conditions
+			</h1>
+		</div>
+		<div class="row">
+			<div class="col-lg-9 col-12">
+				<div class="card-badge pb-3">
+					<div class="badges">
+																																				<span class="badge badge-pill badge-primary">Public Domain<img aria-hidden="true" class="pl-2"
+								src="/themes/custom/dot/images/checkmark.svg"></span>
+											</div>
+				</div>
+				<ul class="bookHeaderList">
+										<li style="display: flex; width: 100%">
+						<div class="col-lg-3 bookHeaderListData">
+							<p>
+																2019-08-01
+															</p>
+						</div>
+					</li>
+					
+					<li id="datset-dmp">
+						<div>
+													</div>
+					</li>
+																																													<li style="display: flex; width: 100%" class="series">
+						<div class="col-lg-12 col-12 bookHeaderListData">
+														<div id="mods2.name_personal">
+								<span>By</span>
+																																																<a href="/gsearch?ref=docDetails&sm_creator=Thapa%2C%20Sandeep">
+									Thapa, Sandeep
+								</a>
+																 <span class="semicolon">
+									;</span>
+																																																										<a href="/gsearch?ref=docDetails&sm_creator=Young%2C%20Rhonda">
+									Young, Rhonda
+								</a>
+																																																																	<a href="/gsearch?ref=docDetails&sm_creator=">
+									
+								</a>
+																																									</div>
+													</div>
+					</li>
+																																		</ul>
+				<div class="mobile-show pt-3">
+										<div class="bookHeaderList-row language-drop">
+	<div class="col-12 bookHeaderListLabel">
+		File Language:
+	</div>
+	<div class="col-12 bookHeaderListData">
+				English
+			</div>
+</div>
+<!-- END ALL LANGUAGE -->
+<div class="btn-group">
+			<div class="altmetric-download-button pr-2">
+				<form action="https://rosap.ntl.bts.gov/view/dot/62258/dot_62258_DS1.pdf" accept-charset="UTF-8" method="get" id="download-document1">
+			<button type="submit" name="download-document-submit" id="download-document-submit1" value="Download"
+				class="download-document-btn btn btn-primary">Download</button>
+		</form>
+			</div>
+			<div class="dropdown-container">
+		<div data-toggle="dropdown">
+			<button type="button" id="citeButtonRecord1" class="btn btn-primary dropdown-toggle" aria-haspopup="true"
+				aria-expanded="false">Citation</button>
+		</div>
+		<div class="dropdown-menu dropdown-menu-right citeDrop p-2" id="citeFormatDropdown">
+			<div class="d-flex justify-content-end pb-2">
+				<div class="stacks-select">
+					<select aria-label="cite Format" id="citeFormat1"
+						name="citeFormat" class="citeFormat language-dropbox form-control"
+						onchange="formatChange('1');">
+												<option class="formatListOption" value="Generic" >Generic</option>
+												<option class="formatListOption" value="APA" >APA</option>
+												<option class="formatListOption" value="MLA" >MLA</option>
+												<option class="formatListOption" value="Chicago" >Chicago</option>
+												<option class="formatListOption" value="RIS" >RIS</option>
+											</select>
+					<i class="cdc-fa-angle-down"></i>
+				</div>
+			</div>
+			<div class="form-group">
+				<textarea aria-label="Generic Preview" readonly class="form-control" style=""
+					id="Genericpreview1">Title : Speed Selection During Winter Road Conditions
+
+Creator(s) : Thapa, Sandeep;Young, Rhonda;
+
+Corporate Creator(s) : University of Wyoming;Mountain-Plains Consortium;
+
+Corporate Contributor(s) : United States. Department of Transportation. Office of the Assistant Secretary for Research and Technology;United States. Department of Transportation. University Transportation Centers (UTC) Program;
+
+Published Date : 2019-08-01
+
+Report Number : MPC 19-394
+
+URL : https://rosap.ntl.bts.gov/view/dot/62258
+
+</textarea>
+				<textarea aria-label="APA Preview" readonly class="form-control" style=" display: none; "
+					id="APApreview1">&quot;Speed Selection During Winter&quot; (2019). </textarea>
+				<textarea aria-label="Chicago Preview" readonly class="form-control" style=" display: none; "
+					id="chicagopreview1">&quot;Speed Selection During Winter Road Conditions&quot;  (2019)</textarea>
+				<textarea aria-label="MLA Preview" readonly class="form-control" style=" display: none; "
+					id="MLApreview1">&quot;Speed Selection During Winter Road Conditions&quot; , 2019</textarea>
+				<textarea aria-label="RIS Preview" readonly class="form-control" style=" display: none; "
+					id="RISpreview1">Export RIS Citation Information.</textarea>
+				<textarea hidden class="d-none" id="RIScitation62258">TY  - 
+AU  - Thapa, Sandeep
+AU  - Young, Rhonda
+A2  - University of Wyoming
+A2  - Mountain-Plains Consortium
+AB  - Driving risk could increase as roadway conditions become more hazardous because of adverse weather conditions. This could lead to an increase in crash frequencies. About 24 percent of all reported motor vehicle crashes in the United States are related to weather conditions. Adverse winter weather may affect driver behavior because of the hazardous driving conditions it can create. These hazardous conditions force individual drivers to react accordingly by modifying their individual headway and speed. Every driver chooses their individual speed according to their own perception of the weather severity, which may lead to higher speed variations, which in turn have resulted in increases in crash frequencies. Therefore, better understanding of the impacts of adverse weather conditions may be helpful in reducing crashes and improving safety. The objectives of this study were to address the relationship and impacts of adverse weather conditions on speed selection behavior. In addition, we examined how the change in speed behavior during a winter storm will affect microscopic behavior with resulting impacts on headways and spacing. The data collected along different corridors of I-80 in Wyoming during winter storms were used for the analysis.
+AN  - dot:62258
+KW  - Behavior
+KW  - Drivers
+KW  - Headways
+KW  - Microsimulation
+KW  - Operating speed
+KW  - Vehicle spacing
+KW  - Weather conditions
+KW  - Winter
+LA  - English
+PY  - 2019-08-01
+TI  - Speed Selection During Winter Road Conditions
+M3  - Tech Report
+M1  - MPC 19-394
+UR  - https://rosap.ntl.bts.gov/view//62258
+ER  - 
+
+
+</textarea>
+			</div>
+			<div class="btn-contain justify-content-end">
+				<button id="copyBtn1"
+					class="btn btn-primary copyButton ">Copy</button>
+				<button id="copiedBtn1"
+					class="btn btn-primary copiedButton hideNoForce">Copied</button>
+				<button id="saveCite1" class="btn btn-primary saveCite hideNoForce"
+					onClick="submitExport(62258);">Save</button>
+			</div>
+		</div>
+	</div>
+</div>										<div cldass="show-alt">
+											</div>
+									</div>
+								<div id="tabs" class="tabsMargin">
+
+					<br class="new-line"> <br class="new-line">
+					<!--Define/Setup Tabs-->
+					<!--************************TAB 1*********************************************-->
+					<div id="tabs-1" class="tab-height">
+																														 <iframe aria-label="document viewer"
+							src="/pdfjs/web/viewer.html?file=https://rosap.ntl.bts.gov/view/dot/62258/dot_62258_DS1.pdf&#pagemode=none" class="googledocviewer" frameborder="0">
+							</iframe>
+																															</div>
+			</div>
+						<div id="tabs-2" class="bookDetails">
+				<h2 class="medium-bold-title 
+														details-title
+							">Details</h2>
+				<ul class="bookDetailsList">
+																																																																																						<li class="bookDetails-row">
+						<!--creatorLI-->
+						<div class="bookDetailsLabel">
+							<b>Creators:</b>
+						</div>
+						<div class="bookDetailsData pt-3">
+														<div id="moretextPAmods.sm_creator">
+																																																																																																								<a style="margin-left: .2em;" href="/gsearch?ref=docDetails&sm_creator=Thapa%2C%20Sandeep">
+									Thapa, Sandeep
+								</a>
+																																 <span class="semicolon">;</span>
+																																																																																																																		<a style="margin-left: .2em;" href="/gsearch?ref=docDetails&sm_creator=Young%2C%20Rhonda">
+									Young, Rhonda
+								</a>
+																																																</div>
+													</div> <!--End creator label column-->
+					</li>
+																																																								<li class="bookDetails-row">
+						<!--creatorLI-->
+						<div class="bookDetailsLabel">
+							<b>Corporate Creators:</b>
+						</div>
+						<div class="bookDetailsData pt-3">
+														<div id="moretextPAmods.sm_corporate_creator">
+																																																																																<a style="margin-left: .2em;" href="/gsearch?ref=docDetails&sm_corporate_creator=University%20of%20Wyoming">
+									University of Wyoming
+								</a>
+																																 <span class="semicolon">;</span>
+																																																																																										<a style="margin-left: .2em;" href="/gsearch?ref=docDetails&sm_corporate_creator=Mountain-Plains%20Consortium">
+									Mountain-Plains Consortium
+								</a>
+																																																</div>
+													</div> <!--End creator label column-->
+					</li>
+																																																																										<li class="bookDetails-row">
+						<!--creatorLI-->
+						<div class="bookDetailsLabel">
+							<b>Corporate Contributors:</b>
+						</div>
+						<div class="bookDetailsData pt-3">
+														<div id="moretextPAmods.sm_corporate_contributor">
+																																																																																<a style="margin-left: .2em;" href="/gsearch?ref=docDetails&sm_corporate_contributor=United%20States.%20Department%20of%20Transportation.%20Office%20of%20the%20Assistant%20Secretary%20for%20Research%20and%20Technology">
+									United States. Department of Transportation. Office of the Assistant Secretary for Research and Technology
+								</a>
+																																 <span class="semicolon">;</span>
+																																																																																										<a style="margin-left: .2em;" href="/gsearch?ref=docDetails&sm_corporate_contributor=United%20States.%20Department%20of%20Transportation.%20University%20Transportation%20Centers%20%28UTC%29%20Program">
+									United States. Department of Transportation. University Transportation Centers (UTC) Program
+								</a>
+																																																</div>
+													</div> <!--End creator label column-->
+					</li>
+																																																																	<li class="bookDetails-row">
+				<div class="bookDetailsLabel">
+					<b> Subject/TRT Terms:
+					</b>
+				</div>
+				<div class="bookDetailsData subject-details pt-3">
+										<div id="mesh-keywords" class="bookDetailListValue">
+																																																<a
+							href="/gsearch?ref=docDetails&sm_key_words=Behavior">Behavior</a>
+																																										<a
+							href="/gsearch?ref=docDetails&sm_key_words=Drivers">Drivers</a>
+																																										<a
+							href="/gsearch?ref=docDetails&sm_key_words=Headways">Headways</a>
+																																										<a
+							href="/gsearch?ref=docDetails&sm_key_words=Microsimulation">Microsimulation</a>
+																																										<a
+							href="/gsearch?ref=docDetails&sm_key_words=Operating%20speed">Operating Speed</a>
+																																										<a
+							href="/gsearch?ref=docDetails&sm_key_words=Vehicle%20spacing">Vehicle Spacing</a>
+																																										<a
+							href="/gsearch?ref=docDetails&sm_key_words=Weather%20conditions">Weather Conditions</a>
+																																										<a
+							href="/gsearch?ref=docDetails&sm_key_words=Winter">Winter</a>
+																													</div>
+					<div class="d-flex justify-content-end">
+											</div>
+				</div> <!--End keywords data cell-->
+			</li>
+			<!--End keywords li-->
+																																																																					<li class="bookDetails-row">
+						<!--creatorLI-->
+						<div class="bookDetailsLabel">
+							<b>Publication/ Report Number:</b>
+						</div>
+						<div class="bookDetailsData pt-3">
+																																																								<a
+								href="/gsearch?ref=docDetails&sm_report_number=MPC%2019-394">
+								MPC 19-394
+							</a>
+																											</div> <!--End creator label column-->
+					</li>
+																																																																																																																																<li class="bookDetails-row">
+						<!--creatorLI-->
+						<div class="bookDetailsLabel">
+							<b>Resource Type:</b>
+						</div>
+						<div class="bookDetailsData pt-3">
+																																																								<a
+								href="/gsearch?ref=docDetails&sm_resource_type=Tech%20Report">
+								Tech Report
+							</a>
+																											</div> <!--End creator label column-->
+					</li>
+																																																																										<li class="bookDetails-row">
+						<!--creatorLI-->
+						<div class="bookDetailsLabel">
+							<b>Geographical Coverage:</b>
+						</div>
+						<div class="bookDetailsData pt-3">
+														<div id="moretextPAmods.sm_geographical_coverage">
+																																																																																<a style="margin-left: .2em;" href="/gsearch?ref=docDetails&sm_geographical_coverage=Wyoming">
+									Wyoming
+								</a>
+																																 <span class="semicolon">;</span>
+																																																																																										<a style="margin-left: .2em;" href="/gsearch?ref=docDetails&sm_geographical_coverage=United%20States">
+									United States
+								</a>
+																																																</div>
+													</div> <!--End creator label column-->
+					</li>
+																																																																																																																																																																																						<li class="bookDetails-row">
+						<!--creatorLI-->
+						<div class="bookDetailsLabel">
+							<b>Corporate Publisher:</b>
+						</div>
+						<div class="bookDetailsData pt-3">
+																																																								<a
+								href="/gsearch?ref=docDetails&sm_corporate_publisher=Mountain-Plains%20Consortium">
+								Mountain-Plains Consortium
+							</a>
+																											</div> <!--End creator label column-->
+					</li>
+																																																																																												<li class="bookDetails-row doc-details" id="doc-details-description">
+				<div class="bookDetailsLabel">
+					<b>Abstract:
+					</b>
+				</div>
+				<div class="bookDetailsData collapse pt-3" id="collapseDetails">
+															Driving risk could increase as roadway conditions become more hazardous because of adverse weather conditions. This could lead to an increase in crash frequencies. About 24 percent of all reported motor vehicle crashes in the United States are related to weather conditions. Adverse winter weather may affect driver behavior because of the hazardous driving conditions it can create. These hazardous conditions force individual drivers to react accordingly by modifying their individual headway and speed. Every driver chooses their individual speed according to their own perception of the weather severity, which may lead to higher speed variations, which in turn have resulted in increases in crash frequencies. Therefore, better understanding of the impacts of adverse weather conditions may be helpful in reducing crashes and improving safety. The objectives of this study were to address the relationship and impacts of adverse weather conditions on speed selection behavior. In addition, we examined how the change in speed behavior during a winter storm will affect microscopic behavior with resulting impacts on headways and spacing. The data collected along different corridors of I-80 in Wyoming during winter storms were used for the analysis.
+														</div>
+			</li>
+																																																																																																																																							<li class="bookDetails-row">
+						<!--creatorLI-->
+						<div class="bookDetailsLabel">
+							<b>Format:</b>
+						</div>
+						<div class="bookDetailsData pt-3">
+																																																								<a
+								href="/gsearch?ref=docDetails&sm_format=PDF">
+								PDF
+							</a>
+																											</div> <!--End creator label column-->
+					</li>
+																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																														<li class="bookDetails-row">
+				<div class="bookDetailsLabel">
+					<b>Collection(s):</b>
+				</div>
+				<div class="bookDetailsData subject-details pt-3">
+					<div>
+																		<a class="d-block"  href="/cbrowse?pid=dot%3A60430&parentId=dot%3A60430">
+							University Transportation Centers
+						</a>
+																	</div>
+				</div>
+			</li>
+									<li class="bookDetails-row">
+				<div class="bookDetailsLabel main-check">
+					<b>Main Document Checksum:</b>
+				</div>
+				<div class="bookDetailsData linebreak pt-3">
+					urn:sha256:c2a38377321cb0f4da46cbcef07f8856cce0fca1802d4be27e02628233212493
+				</div>
+			</li>
+															<li class="bookDetails-row">
+				<div class="bookDetailsLabel main-check">
+					<b>Download URL:</b>
+				</div>
+				<div class="bookDetailsData pt-3">
+
+					<div id="documentPDF" class="bookDetailListValueChecksum">
+						<a class="linebreak" href="https://rosap.ntl.bts.gov/view/dot/62258/dot_62258_DS1.pdf">https://rosap.ntl.bts.gov/view/dot/62258/dot_62258_DS1.pdf</a>
+					</div>
+				</div> <!--End row data-->
+			</li>
+			<!--End $checksum_txt_en li-->
+															<li class="bookDetails-row stacks-file-type">
+				<div class="bookDetailsLabel">
+					<b>File Type:</b>
+				</div>
+				<div class="bookDetailsData docImgType pt-3">
+					<div class="fileimagemargin altmetric-file-icon">
+																		<!--Create document type and size link-->
+												
+						<img style="vertical-align: middle; width: 23px; height: 23px;" src='/themes/custom/dot/images/pdf.svg'
+							alt="Filetype" /><span class="fileimagetype">[PDF
+							- 3.81 MB
+							]
+						</span>
+																													</div>
+				</div>
+			</li>
+						</ul>
+		</div>
+		<!--************************TAB 3*********************************************-->
+				<!--************************TAB 4  Dataset section********************************************* -->
+				<!--************************TAB 5*********************************************-->
+						<div id="tabs-5" class="tab-height">
+			<div class="bookDetails">
+				<!-- Peer Document -->
+				<h2 class="medium-bold-title trending">Related Documents</h2>
+								<div id="related-document-id">
+					<ul class="bookDetailsList">
+												<li class="pt-3">
+							<div class="object-title-row">
+								<div class="object-thumbnail">
+																		<img data-src="/dd/64/e9/57/dd64e957-4865-4e2e-89b4-d36ec56bd750/THUMBNAIL_LARGE" border="0" class="thumbnail-image-below480 img-responsive"
+										alt="Speed Selection during Winter Road Conditions Research Brief">
+																	</div>
+								<div class="card-title-wrap">
+									<div class="object-title">
+    <div class="myCardTitle d-flex">
+        <a href="/view/dot/68344">Speed Selection during Winter Road Conditions [Research Brief]</a>
+            </div>
+</div>
+<div>
+        <div class="search-details-row pt-1">
+        <div class="search-item-info">
+            <div class="search-item-info-col-2 ">
+                <div class="meta-data meta-data-description">
+                                                                                                    The issue was to improve understanding of driver behavior, particularly speed selection, during winter road conditions in order to address high speed 
+                    ...
+                                    </div>
+            </div>
+        </div>
+    </div>
+            <div class="search-details-row pt-1">
+        <!--personal Creators row-->
+        <div class="search-item-info search-author">
+            <div class="search-item-info-col-2 ">
+                <div class="meta-data" style="display: flex;">
+                                                                                 
+                    <div style="display: flex;">
+                                                Young, Rhonda
+                                                 <span class="semicolon">;</span>
+                                                </div>
+                                                             
+                    <div style="display: flex;">
+                                                Thapa, Sandeep
+                                                                    </div>
+                                                                            </div>
+            </div>
+        </div>
+    </div>
+    </div>								</div>
+							</div>
+						</li>
+											</ul>
+					<button type="button" aria-expanded="false" class="btn btn-link related-more col-12"
+						style="color: #007C91; text-align: right; display: block;">More +</button>
+				</div>
+											</div>
+		</div>
+						<div class="previous-section container col-12 col-lg-10 mt-5">
+			<a id="dynamicBackButton" class="d-block" href="">
+				<div class="d-flex">
+					<div class="col-2 col-lg-1 icon-section">
+						<span class="cdc-fa-regular-arrow-left"></span>
+					</div>
+					<div class="col-10 col-lg-11 text-section p-3">
+						<span class="title">PREVIOUS</span>
+						<div class="message-section">
+						</div>
+					</div>
+				</div>
+			</a>
+		</div>
+	</div>
+	<div class="sidenav desktop-show col-lg-3">
+		<div class="gray-logo">
+			<img class="w-100" alt="CDC Stacks Public Health Publications"
+				src='/themes/custom/dot/images/gray-logo.svg' />
+		</div>
+				<div class="bookHeaderList-row language-drop">
+	<div class="col-12 bookHeaderListLabel">
+		File Language:
+	</div>
+	<div class="col-12 bookHeaderListData">
+				English
+			</div>
+</div>
+<!-- END ALL LANGUAGE -->
+<div class="btn-group">
+			<div class="altmetric-download-button pr-2">
+				<form action="https://rosap.ntl.bts.gov/view/dot/62258/dot_62258_DS1.pdf" accept-charset="UTF-8" method="get" id="download-document">
+			<button type="submit" name="download-document-submit" id="download-document-submit" value="Download"
+				class="download-document-btn btn btn-primary">Download</button>
+		</form>
+			</div>
+			<div class="dropdown-container">
+		<div data-toggle="dropdown">
+			<button type="button" id="citeButtonRecord" class="btn btn-primary dropdown-toggle" aria-haspopup="true"
+				aria-expanded="false">Citation</button>
+		</div>
+		<div class="dropdown-menu dropdown-menu-right citeDrop p-2" id="citeFormatDropdown">
+			<div class="d-flex justify-content-end pb-2">
+				<div class="stacks-select">
+					<select aria-label="cite Format" id="citeFormat"
+						name="citeFormat" class="citeFormat language-dropbox form-control"
+						onchange="formatChange('');">
+												<option class="formatListOption" value="Generic" >Generic</option>
+												<option class="formatListOption" value="APA" >APA</option>
+												<option class="formatListOption" value="MLA" >MLA</option>
+												<option class="formatListOption" value="Chicago" >Chicago</option>
+												<option class="formatListOption" value="RIS" >RIS</option>
+											</select>
+					<i class="cdc-fa-angle-down"></i>
+				</div>
+			</div>
+			<div class="form-group">
+				<textarea aria-label="Generic Preview" readonly class="form-control" style=""
+					id="Genericpreview">Title : Speed Selection During Winter Road Conditions
+
+Creator(s) : Thapa, Sandeep;Young, Rhonda;
+
+Corporate Creator(s) : University of Wyoming;Mountain-Plains Consortium;
+
+Corporate Contributor(s) : United States. Department of Transportation. Office of the Assistant Secretary for Research and Technology;United States. Department of Transportation. University Transportation Centers (UTC) Program;
+
+Published Date : 2019-08-01
+
+Report Number : MPC 19-394
+
+URL : https://rosap.ntl.bts.gov/view/dot/62258
+
+</textarea>
+				<textarea aria-label="APA Preview" readonly class="form-control" style=" display: none; "
+					id="APApreview">&quot;Speed Selection During Winter&quot; (2019). </textarea>
+				<textarea aria-label="Chicago Preview" readonly class="form-control" style=" display: none; "
+					id="chicagopreview">&quot;Speed Selection During Winter Road Conditions&quot;  (2019)</textarea>
+				<textarea aria-label="MLA Preview" readonly class="form-control" style=" display: none; "
+					id="MLApreview">&quot;Speed Selection During Winter Road Conditions&quot; , 2019</textarea>
+				<textarea aria-label="RIS Preview" readonly class="form-control" style=" display: none; "
+					id="RISpreview">Export RIS Citation Information.</textarea>
+				<textarea hidden class="d-none" id="RIScitation62258">TY  - 
+AU  - Thapa, Sandeep
+AU  - Young, Rhonda
+A2  - University of Wyoming
+A2  - Mountain-Plains Consortium
+AB  - Driving risk could increase as roadway conditions become more hazardous because of adverse weather conditions. This could lead to an increase in crash frequencies. About 24 percent of all reported motor vehicle crashes in the United States are related to weather conditions. Adverse winter weather may affect driver behavior because of the hazardous driving conditions it can create. These hazardous conditions force individual drivers to react accordingly by modifying their individual headway and speed. Every driver chooses their individual speed according to their own perception of the weather severity, which may lead to higher speed variations, which in turn have resulted in increases in crash frequencies. Therefore, better understanding of the impacts of adverse weather conditions may be helpful in reducing crashes and improving safety. The objectives of this study were to address the relationship and impacts of adverse weather conditions on speed selection behavior. In addition, we examined how the change in speed behavior during a winter storm will affect microscopic behavior with resulting impacts on headways and spacing. The data collected along different corridors of I-80 in Wyoming during winter storms were used for the analysis.
+AN  - dot:62258
+KW  - Behavior
+KW  - Drivers
+KW  - Headways
+KW  - Microsimulation
+KW  - Operating speed
+KW  - Vehicle spacing
+KW  - Weather conditions
+KW  - Winter
+LA  - English
+PY  - 2019-08-01
+TI  - Speed Selection During Winter Road Conditions
+M3  - Tech Report
+M1  - MPC 19-394
+UR  - https://rosap.ntl.bts.gov/view//62258
+ER  - 
+
+
+</textarea>
+			</div>
+			<div class="btn-contain justify-content-end">
+				<button id="copyBtn"
+					class="btn btn-primary copyButton ">Copy</button>
+				<button id="copiedBtn"
+					class="btn btn-primary copiedButton hideNoForce">Copied</button>
+				<button id="saveCite" class="btn btn-primary saveCite hideNoForce"
+					onClick="submitExport(62258);">Save</button>
+			</div>
+		</div>
+	</div>
+</div>				<div class="show-alt d-flex">
+					</div>
+				<div><span class="heading-medium">ON THIS PAGE</span></div>
+		<hr style="display: block; width: 100%; margin: 0;">
+		<div class="tabLinks">
+			<a id="details" class="d-block" href="#tabs-2">Details</a>
+															<a id="relDocs" class="d-block" href="#tabs-5">Related Documents</a>
+					</div>
+		<div class="notify-container mt-5">
+			<div>
+				<div class="logo">
+					<img aria-hidden="true" class="logo" src="/themes/custom/dot/images/SmallStacksIcon.svg">
+				</div>
+				<div class="notify-text">
+										<strong>ROSA P</strong> serves as an archival repository of USDOT-published products including scientific 
+					findings, journal articles, guidelines, recommendations, or other information authored or co-authored by 
+					USDOT or funded partners. As a repository, <strong>ROSA P</strong> retains documents in their original published format to 
+					ensure public access to scientific information.
+									</div>
+			</div>
+		</div>
+		<div class="pin">
+						<div class="youmayalsolike">
+				<div>
+					<div class="link-section p-3">
+						<span class="title">You May Also Like</span>
+						<ol class="related-articles" id="you-contain">
+														<li>
+								<div class="myCardTitle">
+									<a href="/view/dot/68344" title="Speed Selection during Winter Road Conditions [Research Brief]">Speed Selection during Winter Road Conditions [Research Brief]</a>
+								</div>
+							</li>
+														<li>
+								<div class="myCardTitle">
+									<a href="/view/dot/12251" title="Naturalistic Study of Truck Following Behavior">Naturalistic Study of Truck Following Behavior</a>
+								</div>
+							</li>
+																				</ol>
+					</div>
+					<div class="return-section p-3">
+												<p>
+							Checkout our Featured at <a id="stacksFooterUrl" href="/">Stacks Home</a>
+						</p>
+											</div>
+				</div>
+			</div>
+						<div class="pt-3">
+				<a href="#mainTitle"><span class="cdc-fa-angle-up pr-1"></span>BACK TO TOP</a>
+			</div>
+		</div>
+	</div>
+</div>
+
+</div>
+  </div>
+
+  </div>
+
+					</div>
+				</div>
+			</div>
+			<div class="modal fade" id="batata" tabindex="-1" role="dialog"
+	aria-labelledby="batata" aria-modal="true">
+	<div class="modal-dialog" role="document">
+		<div class="modal-content">
+			<div class="modal-header">
+				<button type="button" class="close" data-dismiss="modal"
+					aria-label="Close">
+					<span aria-hidden="true">&times;</span>
+				</button>
+				<h4 class="modal-title" id="modal-label">Exit
+					Notification/Disclaimer Policy</h4>
+			</div>
+			<div class="modal-body">
+				<strong>Links with this icon <svg
+						class="bi bi-box-arrow-up-right blue-svg" width="1em" height="1em"
+						viewBox="0 0 16 16" fill="currentColor"
+						xmlns="http://www.w3.org/2000/svg">
+  <path fill-rule="evenodd"
+							d="M1.5 13A1.5 1.5 0 003 14.5h8a1.5 1.5 0 001.5-1.5V9a.5.5 0 00-1 0v4a.5.5 0 01-.5.5H3a.5.5 0 01-.5-.5V5a.5.5 0 01.5-.5h4a.5.5 0 000-1H3A1.5 1.5 0 001.5 5v8zm7-11a.5.5 0 01.5-.5h5a.5.5 0 01.5.5v5a.5.5 0 01-1 0V2.5H9a.5.5 0 01-.5-.5z"
+							clip-rule="evenodd" />
+  <path fill-rule="evenodd"
+							d="M14.354 1.646a.5.5 0 010 .708l-8 8a.5.5 0 01-.708-.708l8-8a.5.5 0 01.708 0z"
+							clip-rule="evenodd" />
+</svg> indicate that you are leaving a Bureau of Transportation
+											Statistics (BTS)/National Transportation Library (NTL)
+											Web-based service.
+			</strong>
+			<p>
+				<br>
+			</p>
+			<p>Thank you for visiting.</p>
+			<br>
+			<p>You are about to access a non-government link outside of
+				the U.S. Department of Transportation's National
+				Transportation Library.</p>
+			<br>
+			<p>Please note: While links to Web sites outside of DOT are
+				offered for your convenience, when you exit DOT Web sites,
+				Federal privacy policy and Section 508 of the Rehabilitation
+				Act (accessibility requirements) no longer apply. In
+				addition, DOT does not attest to the accuracy, relevance,
+				timeliness or completeness of information provided by linked
+				sites. Linking to a Web site does not constitute an
+				endorsement by DOT of the sponsors of the site or the
+				products presented on the site. For more information, please
+				view DOT's Web site linking policy.</p>
+			<br>
+			<p>To get back to the page you were previously viewing, click
+				your Cancel button.</p>
+			</div>
+			<div class="modal-footer footer-buttons">
+				<button type="button" class="btn btn-default footer-green"
+					data-dismiss="modal">Cancel</button>
+				<button type="button"
+					class="btn btn-default footer-green dark-green rosaP_exit"
+					onclick="$('.modal.show').modal('hide')">Continue</button>
+			</div>
+		</div>
+	</div>
+</div>		</main>
+				
+<footer>
+	<!--FOOTER CONSTRUCTION--->
+	<section class="footer-top">
+		<div class="container">
+			<div class="row">
+				<div class="col col-12 col-md-6 col-lg-5">
+					<div class="footer__description">
+						<a href="/about">ROSAP<span
+							class="cdc-fa-angle-right pl-1"></span></a>
+						<p><strong>ROSA P</strong> serves as an archival repository of USDOT-published products including scientific 
+					findings, journal articles, guidelines, recommendations, or other information authored or co-authored by 
+					USDOT or funded partners. As a repository, <strong>ROSA P</strong> retains documents in their original published format to 
+					ensure public access to scientific information.</p>
+					</div>
+				</div>
+				<div class="col col-12 col-md-5 offset-md-1 col-lg-5 offset-lg-1">
+					<ul class="footer__main-nav">
+						<li><a href="/">Rosa P Home</a></li>
+						<li><a href="/browse/collections">Collections</a></li>
+						<li><a href="/browse/recent">Recent Additions</a></li>
+						<li><a target="_blank" href="https://doi.org/10.21949/1503647">Public Access</a></li>
+						<li><a href="/submitContent">Submit Content</a></li>
+						<li><a href="/help">Help</a></li>
+						<li><a href="/about">About</a></li>
+						<li><a href="/contact">Contact Us</a></li>
+					</ul>
+				</div>
+			</div>
+		</div>
+	</section>
+	<section id="footer-links">
+		<div class="container pt-5 pb-5">
+			<div class="row white">
+				<div class="col-lg-8 col-sm-12 moderate pb-5">
+					<div>U.S. DEPARTMENT OF TRANSPORTATION</div>
+					<div>
+						<strong>Bureau of Transportation Statistics</strong>
+					</div>
+					<div>1200 NEW JERSEY AVENUE, SE</div>
+					<div>WASHINGTON, DC 20590</div>
+					<div>800-853-1351</div>
+				</div>
+				<div class="col-lg-4 col-sm-12 pb-4">
+					<div>
+						<a target="_blank" class="btn btn-primary"
+							href="https://public.govdelivery.com/accounts/USDOT/subscriber/new?category_id=USDOT_C17">
+							Subscribe to email updates
+						</a>
+					</div>
+					<div id="socialMediaLinks" class="mt-3">
+						<a target="_blank" href="https://twitter.com/bts_usdot" class="pr-3" data-target="#batata"
+							data-toggle="modal"><span class="fontawesome-icon-inline"><svg width="19" height="19" viewBox="0 0 1200 1227" fill="none" xmlns="http://www.w3.org/2000/svg">
+								<path d="M714.163 519.284L1160.89 0H1055.03L667.137 450.887L357.328 0H0L468.492 681.821L0 1226.37H105.866L515.491 750.218L842.672 1226.37H1200L714.137 519.284H714.163ZM569.165 687.828L521.697 619.934L144.011 79.6944H306.615L611.412 515.685L658.88 583.579L1055.08 1150.3H892.476L569.165 687.854V687.828Z" fill="white"/>
+								</svg>
+							</span>
+						</a>
+						<a target="_blank" href="https://www.linkedin.com/company/bureau-of-transportation-statistics-bts" class="pr-3"
+							data-target="#batata" data-toggle="modal"><span class="fontawesome-icon-inline"><svg
+									class="svg-inline--fa fa-linkedin fa-w-14" aria-hidden="true" focusable="false"
+									data-prefix="fab" data-icon="linkedin" role="img" xmlns="http://www.w3.org/2000/svg"
+									viewBox="0 0 448 512" data-fa-i2svg="">
+									<path fill="currentColor"
+										d="M416 32H31.9C14.3 32 0 46.5 0 64.3v383.4C0 465.5 14.3 480 31.9 480H416c17.6 0 32-14.5 32-32.3V64.3c0-17.8-14.4-32.3-32-32.3zM135.4 416H69V202.2h66.5V416zm-33.2-243c-21.3 0-38.5-17.3-38.5-38.5S80.9 96 102.2 96c21.2 0 38.5 17.3 38.5 38.5 0 21.3-17.2 38.5-38.5 38.5zm282.1 243h-66.4V312c0-24.8-.5-56.7-34.5-56.7-34.6 0-39.9 27-39.9 54.9V416h-66.4V202.2h63.7v29.2h.9c8.9-16.8 30.6-34.5 62.9-34.5 67.2 0 79.7 44.3 79.7 101.9V416z">
+									</path>
+								</svg>
+							</span>
+						</a>
+						<a target="_blank" href="https://www.instagram.com/bts_usdot" class="pr-3" data-target="#batata"
+							data-toggle="modal"><span class="fontawesome-icon-inline"><svg
+									class="svg-inline--fa fa-instagram fa-w-14" aria-hidden="true" focusable="false"
+									data-prefix="fab" data-icon="instagram" role="img" xmlns="http://www.w3.org/2000/svg"
+									viewBox="0 0 448 512" data-fa-i2svg="" aria-label="instagram">
+									<path fill="currentColor"
+										d="M224.1 141c-63.6 0-114.9 51.3-114.9 114.9s51.3 114.9 114.9 114.9S339 319.5 339 255.9 287.7 141 224.1 141zm0 189.6c-41.1 0-74.7-33.5-74.7-74.7s33.5-74.7 74.7-74.7 74.7 33.5 74.7 74.7-33.6 74.7-74.7 74.7zm146.4-194.3c0 14.9-12 26.8-26.8 26.8-14.9 0-26.8-12-26.8-26.8s12-26.8 26.8-26.8 26.8 12 26.8 26.8zm76.1 27.2c-1.7-35.9-9.9-67.7-36.2-93.9-26.2-26.2-58-34.4-93.9-36.2-37-2.1-147.9-2.1-184.9 0-35.8 1.7-67.6 9.9-93.9 36.1s-34.4 58-36.2 93.9c-2.1 37-2.1 147.9 0 184.9 1.7 35.9 9.9 67.7 36.2 93.9s58 34.4 93.9 36.2c37 2.1 147.9 2.1 184.9 0 35.9-1.7 67.7-9.9 93.9-36.2 26.2-26.2 34.4-58 36.2-93.9 2.1-37 2.1-147.8 0-184.8zM398.8 388c-7.8 19.6-22.9 34.7-42.6 42.6-29.5 11.7-99.5 9-132.1 9s-102.7 2.6-132.1-9c-19.6-7.8-34.7-22.9-42.6-42.6-11.7-29.5-9-99.5-9-132.1s-2.6-102.7 9-132.1c7.8-19.6 22.9-34.7 42.6-42.6 29.5-11.7 99.5-9 132.1-9s102.7-2.6 132.1 9c19.6 7.8 34.7 22.9 42.6 42.6 11.7 29.5 9 99.5 9 132.1s2.7 102.7-9 132.1z">
+									</path>
+								</svg>
+							</span>
+						</a>
+						<a target="_blank" href="https://public.govdelivery.com/accounts/USDOT/subscriber/new?category_id=USDOT_C17"
+							class="noMod"><span class="fontawesome-icon-inline"><svg
+									class="svg-inline--fa fa-envelope fa-w-16" aria-hidden="true" focusable="false"
+									data-prefix="fas" data-icon="envelope" role="img" xmlns="http://www.w3.org/2000/svg"
+									viewBox="0 0 512 512" data-fa-i2svg="">
+									<path fill="currentColor"
+										d="M502.3 190.8c3.9-3.1 9.7-.2 9.7 4.7V400c0 26.5-21.5 48-48 48H48c-26.5 0-48-21.5-48-48V195.6c0-5 5.7-7.8 9.7-4.7 22.4 17.4 52.1 39.5 154.1 113.6 21.1 15.4 56.7 47.8 92.2 47.6 35.7.3 72-32.8 92.3-47.6 102-74.1 131.6-96.3 154-113.7zM256 320c23.2.4 56.6-29.2 73.4-41.4 132.7-96.3 142.8-104.7 173.4-128.7 5.8-4.5 9.2-11.5 9.2-18.9v-19c0-26.5-21.5-48-48-48H48C21.5 64 0 85.5 0 112v19c0 7.4 3.4 14.3 9.2 18.9 30.6 23.9 40.7 32.4 173.4 128.7 16.8 12.2 50.2 41.8 73.4 41.4z">
+									</path>
+								</svg>
+							</span>
+						</a>
+					</div>
+				</div>
+			</div>
+			<div class="row pb-5 white">
+				<div class="col-lg-4 col-sm-12">
+					<div class="section-title mb-3">About</div>
+					<div class="mb-3"><a target="_blank" href="https://www.bts.gov/about-BTS">About BTS</a></div>
+					<div class="mb-3"><a target="_blank" href="https://www.bts.gov/learn-about-bts-and-our-work/contact-us">Contact Us</a></div>
+					<div class="mb-3"><a target="_blank" href="http://transportation.libanswers.com/">FAQs</a></div>
+					<div class="mb-3"><a target="_blank" href="https://www.bts.gov/jobs">Jobs and Internships</a></div>
+					<div class="mb-3"><a target="_blank" href="https://www.transportation.gov/administrations/research-and-technology">DOT Research and Technology (OST-R)</a></div>
+				</div>
+				<div class="col-lg-4 col-sm-12">
+					<div class="section-title mb-3">Resources</div>
+					<div class="mb-3"><a target="_blank" href="http://transportation.libanswers.com/form.php?queue_id=1810">Ask a Librarian</a></div>
+					<div class="mb-3"><a target="_blank" href="https://data.bts.gov/">BTS Open Data Catalog</a></div>
+					<div class="mb-3"><a target="_blank" href="https://ntl.bts.gov/">National Transportation Library</a></div>
+					<div class="mb-3"><a target="_blank" href="https://www.transtats.bts.gov/ONTIME/">Search for On-Time Flight Data</a></div>
+					<div class="mb-3"><a target="_blank" href="https://www.bts.gov/archive/publications/the_changing_face_of_transportation/appendix_b">Acronym Guide</a></div>
+				</div>
+				<div class="col-lg-4 col-sm-12">
+					<div class="section-title mb-3">Policies, Rights and Legal</div>
+					<div class="mb-3"><a target="_blank" href="https://www.transportation.gov/about">About DOT</a></div>
+					<div class="mb-3"><a target="_blank" href="https://www.transportation.gov/budget/dot-budget-and-performance">Budget and Performance</a></div>
+					<div class="mb-3"><a target="_blank" href="https://www.civilrights.dot.gov/">Civil Rights</a></div>
+					<div class="mb-3"><a target="_blank" href="https://www.transportation.gov/ethics">Ethics</a></div>
+					<div class="mb-3"><a target="_blank" href="https://www.transportation.gov/foia">FOIA</a></div>
+					<div class="mb-3"><a target="_blank" href="https://www.transportation.gov/dot-information-dissemination-quality-guidelines">Information Quality</a></div>
+					<div class="mb-3"><a target="_blank" href="https://www.civilrights.dot.gov/civil-rights-awareness-enforcement/employment-related/affirmative-employment/no-fear-act">No FEAR Act</a></div>
+					<div class="mb-3"><a target="_blank" href="https://www.oig.dot.gov/">Office of Inspector General</a></div>
+					<div class="mb-3"><a target="_blank" href="https://www.transportation.gov/dot-website-privacy-policy">Privacy Policy</a></div>
+					<div class="mb-3"><a target="_blank" href="https://www.usa.gov/">USA.gov</a></div>
+					<div class="mb-3"><a target="_blank" href="https://www.transportation.gov/web-policies">Web Policies and Notices</a></div>
+					<div class="mb-3"><a target="_blank" href="https://www.transportation.gov/web-standards">Web Standards</a></div>
+				</div>
+			</div>
+		</div>
+	</section>
+	<div class="container" id="footer-bottom-links">
+		<section>
+			<span class="desktop-show">Version 3.28</span>
+			<div>
+				<span class="pr-4"> <a target="_blank"
+					href="http://www.hhs.gov/">HHS.GOV</a>
+				</span> <span id="usa-gov"> <a target="_blank"
+					href="http://www.usa.gov/">USA.GOV</a>
+				</span>
+			</div>
+			<span class="mobile-show">Version 3.28</span>
+		</section>
+	</div>
+</footer>
+	</div>
+</div>
+
+
+  </div>
+
+    
+	<script src="/sites/default/files/js/js_2AofHAi9QvxSq58GEzjP1Rov_w6UD3xcrGr6YJ8hCoA.js?scope=footer&amp;delta=0&amp;language=en&amp;theme=dot&amp;include=eJzzT8pKTS4Jy0wt1_eHM-NzMpOKEosqdVLyS_SBWBfIBwBKsQ-1"></script>
+<script src="https://d1bxh8uas1mnw7.cloudfront.net/assets/embed.js"></script>
+<script src="/sites/default/files/js/js_OeGjBjl9QBzUAxJSa5izXSObciIeDrRJotSrP2CtoxQ.js?scope=footer&amp;delta=2&amp;language=en&amp;theme=dot&amp;include=eJzzT8pKTS4Jy0wt1_eHM-NzMpOKEosqdVLyS_SBWBfIBwBKsQ-1"></script>
+
+    <script>
+      (function (i, s, o, g, r, a, m) {
+        i['GoogleAnalyticsObject'] = r; i[r] = i[r] || function () {
+          (i[r].q = i[r].q || []).push(arguments)
+        }, i[r].l = 1 * new Date(); a = s.createElement(o),
+          m = s.getElementsByTagName(o)[0]; a.async = 1; a.src = g; m.parentNode.insertBefore(a, m)
+      })(window, document, 'script', 'https://www.google-analytics.com/analytics.js', 'ga');
+  
+      ga('create', 'G-BYBGSXCYW4', 'auto');
+      ga('send', 'pageview');
+  
+    </script>
+    <script>(function (w, d, s, l, i) {
+        w[l] = w[l] || []; w[l].push({
+          'gtm.start':
+            new Date().getTime(), event: 'gtm.js'
+        }); var f = d.getElementsByTagName(s)[0],
+          j = d.createElement(s), dl = l != 'dataLayer' ? '&l=' + l : ''; j.async = true; j.src =
+            'https://www.googletagmanager.com/gtm.js?id=' + i + dl; f.parentNode.insertBefore(j, f);
+      })(window, document, 'script', 'dataLayer', 'GTM-P76HX95');</script>
+    <noscript>
+      <iframe
+        src="https://www.googletagmanager.com/ns.html?id=GTM-P76HX95"
+        height="0" width="0" style="display: none; visibility: hidden"></iframe>
+    </noscript>
+</body>
+</html>
