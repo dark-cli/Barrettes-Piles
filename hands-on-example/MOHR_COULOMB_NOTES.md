@@ -2,19 +2,35 @@
 
 ## Current Status
 
-**Mohr-Coulomb is currently DISABLED** in the analysis.
+**Mohr-Coulomb is ENABLED** in the code, but **CalculiX crashes** during execution.
 
-The soil material is currently using **linear elastic** behavior only.
+The syntax is correct, but CalculiX 2.22 experiences segmentation faults when solving the non-linear system with Mohr-Coulomb plasticity.
 
-## Why Mohr-Coulomb Was Disabled
+## Why Mohr-Coulomb Is Not Working
 
-During testing, CalculiX was crashing (segmentation fault) when Mohr-Coulomb plasticity was enabled. The crash occurred during the Newton-Raphson iterative procedure for non-linear analysis.
+CalculiX 2.22 crashes (segmentation fault) when Mohr-Coulomb plasticity is enabled, even with correct syntax and conservative parameters. The crash occurs during the Newton-Raphson iterative procedure for non-linear analysis.
 
 ### Symptoms Observed:
 - CalculiX detected loads correctly (88 distributed facial loads)
-- Analysis started successfully
-- Crash occurred during non-linear solution phase
-- No results written (FRD file remained at 153 bytes - header only)
+- Analysis starts successfully
+- "Nonlinear material laws are taken into account" message appears
+- "Newton-Raphson iterative procedure is active" message appears
+- Then crashes (core dump) before first iteration completes
+- No results written (FRD file remains at 153 bytes - header only)
+
+### What Was Tried:
+✅ Correct parameter order: `phi, psi, c` (friction, dilation, cohesion)  
+✅ Smaller load increments: 50, 100, 200... (instead of 100, 200, 500...)  
+✅ Non-associative flow: Dilation angle = 0°  
+✅ Proper step increments: 0.1,1.0,1e-6,1.0  
+✅ All syntax verified against CalculiX source code
+
+### Parameter Order in CalculiX:
+CalculiX expects: `friction_angle, dilation_angle, cohesion` (phi, psi, c)
+```python
+f.write(f"{FRICTION_ANGLE},{DILATATION_ANGLE},{COHESION}\n")
+# Example: 25.0,0.0,15.0 (25° friction, 0° dilation, 15 kN/m² cohesion)
+```
 
 ### Possible Causes:
 1. **Numerical instability**: Mohr-Coulomb parameters may cause convergence issues
@@ -22,18 +38,18 @@ During testing, CalculiX was crashing (segmentation fault) when Mohr-Coulomb pla
 3. **Material parameter interaction**: Cohesion and friction angle combination
 4. **CalculiX implementation**: Potential bug or limitation in Mohr-Coulomb implementation
 
-## Enabling Mohr-Coulomb
+## Mohr-Coulomb Is Currently Enabled
 
-To re-enable Mohr-Coulomb plasticity:
+The code already has Mohr-Coulomb enabled in `create_barrette_inp.py` (lines 203-208):
 
-### Step 1: Edit `create_barrette_inp.py`
-
-Uncomment lines 205-207:
 ```python
 f.write("*MOHR COULOMB\n")
-# Format: cohesion (kN/m²), friction angle (degrees), dilation angle (degrees)
-f.write(f"{COHESION},{FRICTION_ANGLE},{DILATATION_ANGLE}\n")
+# Format: friction angle (degrees), dilation angle (degrees), cohesion (kN/m²)
+# Note: CalculiX expects: phi, psi, c (NOT c, phi, psi!)
+f.write(f"{FRICTION_ANGLE},{DILATATION_ANGLE},{COHESION}\n")
 ```
+
+**However, the analysis crashes** before results can be written. To temporarily disable Mohr-Coulomb, comment out these lines.
 
 ### Step 2: Adjust Step Increments
 

@@ -200,11 +200,12 @@ with open(output_file, 'w') as f:
     f.write(f"{E_SOIL},{NU_SOIL}\n")
     f.write("*DENSITY\n")
     f.write(f"{GAMMA_SOIL}\n")
-    # Mohr-Coulomb plasticity - temporarily disabled for testing
-    # Uncomment below to enable Mohr-Coulomb (may cause convergence issues)
-    # f.write("*MOHR COULOMB\n")
-    # # Format: cohesion (kN/m²), friction angle (degrees), dilation angle (degrees)
-    # f.write(f"{COHESION},{FRICTION_ANGLE},{DILATATION_ANGLE}\n")
+    # Mohr-Coulomb plasticity for non-linear soil behavior
+    f.write("*MOHR COULOMB\n")
+    # Format: friction angle (degrees), dilation angle (degrees), cohesion (kN/m²)
+    # Note: CalculiX expects: phi, psi, c (NOT c, phi, psi!)
+    # Using non-associative flow (dilation angle = 0) for stability
+    f.write(f"{FRICTION_ANGLE},{DILATATION_ANGLE},{COHESION}\n")
     
     # Solid sections
     f.write("*SOLID SECTION,ELSET=EBARRETTE,MATERIAL=CONCRETE\n")
@@ -275,11 +276,11 @@ with open(output_file, 'w') as f:
         
         f.write(f"*STEP\n")
         f.write("*STATIC\n")
-        # Time increment settings for linear analysis
+        # Time increment settings for non-linear analysis with Mohr-Coulomb
         # Format: initial time increment, total time, minimum increment, maximum increment
-        # For linear elastic: use simple increment settings
-        # For non-linear (with Mohr-Coulomb): use smaller increments for convergence
-        f.write("1.0,1.0,1.0,1.0\n")  # Linear: single step
+        # Using smaller increments for better convergence with plasticity
+        # Initial: 0.1, Total: 1.0, Min: 1e-6, Max: 1.0
+        f.write("0.1,1.0,1e-6,1.0\n")
         f.write("*DLOAD\n")
         # Apply uniform pressure on barrette top surface
         # P = pressure magnitude (positive = compressive, downward in -Z direction)

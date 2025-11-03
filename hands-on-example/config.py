@@ -34,7 +34,9 @@ MESH_DENSITY_Y = 20        # elements in y-direction
 MESH_DENSITY_Z = 20        # elements in z-direction (uniform density in all directions)
 
 # Loading
-LOAD_INCREMENTS = [100, 200, 500, 1000, 2000, 3000, 4000, 5000, 6000, 7000, 8000]  # kN
+# For Mohr-Coulomb: start with smaller increments for better convergence
+# Reduced increments help with non-linear material behavior
+LOAD_INCREMENTS = [50, 100, 200, 300, 500, 750, 1000, 1500, 2000, 3000, 5000]  # kN
 # Alternative: uniform increments
 # LOAD_INCREMENTS = [i * 500 for i in range(1, 17)]  # 500, 1000, 1500, ... 8000 kN
 
