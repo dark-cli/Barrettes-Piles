@@ -22,20 +22,19 @@ cd ../tools/calculix/CalculiX/ccx_2.22/src
 ./ccx_2.22 -i ../../../../hands-on-example/barrette_analysis
 ```
 
-## Step 3: Visualize Results
+## Step 3: View Results
 
+After running `./run_analysis.sh`, you'll have `barrette_analysis.vtk`.
+
+**Open in ParaView:**
 ```bash
-./visualize_results.sh
+paraview barrette_analysis.vtk
 ```
 
-This will:
-1. Automatically convert results to VTK format (using CGX)
-2. Open ParaView with your results
-
-**In ParaView:**
-- Use filters to view displacements, stresses, etc.
+**Or any VTK viewer:**
+- The VTK file contains all results (displacements, stresses, strains)
+- Use ParaView filters to visualize different components
 - Apply "Warp by Vector" to see deformed shape
-- Change coloring to visualize different results
 
 ## Modify Parameters
 

@@ -8,7 +8,7 @@ This example demonstrates:
 - Linear elastic FEA analysis of barrette piles
 - Soil-structure interaction modeling
 - Load-displacement behavior under vertical loading
-- Preprocessing, solving, and post-processing workflow
+- Automatic export of results to VTK format for visualization
 
 **Important Limitations:**
 - ✅ **Linear elastic analysis only** - No plasticity or soil failure modeling
@@ -21,9 +21,12 @@ This example demonstrates:
 
 ### Software Dependencies
 
-- **CalculiX**: FEA solver (CCX) and pre/post-processor (CGX)
+- **CalculiX**: FEA solver (CCX)
   - Already installed in: `../tools/calculix/`
   - See installation in: `../tools/calculix/README.md`
+- **ccx2paraview**: Python tool for converting CalculiX results to VTK
+  - Automatically installed if needed
+  - Or install manually: `pip3 install ccx2paraview`
 - **Python 3.7+**: For generating input files
 - **NumPy**: For numerical operations (optional, only if extending scripts)
 
@@ -42,27 +45,25 @@ This example demonstrates:
 hands-on-example/
 ├── config.py                  # Configuration parameters (edit this!)
 ├── create_barrette_inp.py     # Generates CalculiX input file
-├── barrette_analysis.inp      # Generated CalculiX input file
-├── run_analysis.sh            # Script to run analysis
-├── visualize_results.sh       # Script to visualize results
+├── run_analysis.sh            # Script to run analysis and export to VTK
 ├── requirements.txt           # Python dependencies
 ├── README.md                  # This file
-└── results/                   # Output directory
-    ├── barrette_analysis.frd  # Results file (after running)
-    └── barrette_analysis.dat   # Output data file
+├── results/                   # Output directory
+│   └── calculix_output.log   # Analysis log file
+├── barrette_analysis.inp      # Generated CalculiX input file
+├── barrette_analysis.frd      # CalculiX results file (after running)
+├── barrette_analysis.dat      # CalculiX data file
+└── barrette_analysis.vtk      # VTK results file (ready for ParaView)
 ```
 
 ## Quick Start
 
-### Option 1: Run Everything (Easiest)
-
 ```bash
-# Generate input file and run analysis
+# Generate input file, run analysis, and export to VTK
 ./run_analysis.sh
-
-# Visualize results
-./visualize_results.sh
 ```
+
+This will create `barrette_analysis.vtk` which you can open in ParaView or any VTK viewer.
 
 ### Option 2: Step-by-Step
 
@@ -83,11 +84,7 @@ hands-on-example/
    ./ccx_2.22 -i ../../../../hands-on-example/barrette_analysis
    ```
 
-4. **Visualize results**:
-   ```bash
-   cd ../../../..
-   ./visualize_results.sh
-   ```
+4. **View results**: Open `barrette_analysis.vtk` in ParaView or any VTK-compatible viewer
 
 ## Configuration
 
@@ -130,16 +127,13 @@ The solver:
 - Solves linear system
 - Outputs results to `.frd` and `.dat` files
 
-### 3. Visualization (ParaView)
+### 3. Results Export
 
-The results are visualized using **ParaView**:
-- Runs `./visualize_results.sh`
-- Automatically converts CalculiX `.frd` files to VTK format
-- High-quality visualization with excellent graphics
-- Advanced filtering capabilities
-- Export publication-quality images and animations
-
-**Note:** The script automatically uses CGX to export to VTK format, then opens ParaView.
+The analysis automatically exports results to VTK format:
+- CalculiX solver creates `.frd` results file
+- Automatic conversion from `.frd` to `.vtk` using `ccx2paraview`
+- VTK file can be opened in ParaView or any VTK-compatible viewer
+- No manual conversion or visualization scripts needed
 
 ## Model Details
 
@@ -173,9 +167,20 @@ The results are visualized using **ParaView**:
 - **`barrette_analysis.dat`**: Text output with summary
 - **`barrette_analysis.frd`**: Binary results file for visualization
 
-### Viewing Results in ParaView
+### Viewing Results
 
-After running `./visualize_results.sh`, ParaView will open with your results.
+After running `./run_analysis.sh`, you'll have a `barrette_analysis.vtk` file.
+
+**Open in ParaView:**
+```bash
+paraview barrette_analysis.vtk
+```
+
+**Or any VTK-compatible viewer:**
+- ParaView (recommended)
+- VisIt
+- ParaViewWeb
+- Other VTK readers
 
 **In ParaView:**
 - Use filters to view displacements, stresses, etc.
@@ -183,8 +188,6 @@ After running `./visualize_results.sh`, ParaView will open with your results.
 - Change coloring to visualize different result components
 - Use slice/clip filters to see internal results
 - Export high-quality images and animations
-
-The script automatically converts CalculiX `.frd` files to VTK format using CGX before opening ParaView.
 
 ## Extending the Example
 
@@ -230,9 +233,10 @@ This CalculiX version replaces the previous FEniCS implementation:
 - Check that CalculiX is installed: `ls ../tools/calculix/CalculiX/ccx_2.22/src/ccx_2.22`
 - Add to PATH or use full path in scripts
 
-### CGX window doesn't open
-- Check display: `echo $DISPLAY`
-- Try: `DISPLAY=:0 ./cgx -v barrette_analysis.frd`
+### VTK file not created
+- Check that `ccx2paraview` is installed: `pip3 install ccx2paraview`
+- Verify analysis completed: check `barrette_analysis.frd` exists
+- Run conversion manually: `ccx2paraview barrette_analysis.frd vtk`
 
 ### Analysis fails
 - Check input file syntax: `head barrette_analysis.inp`

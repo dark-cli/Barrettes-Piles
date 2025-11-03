@@ -4,13 +4,14 @@ All parameters can be modified here
 """
 
 # Barrette Geometry
-BARRETTE_LENGTH = 1.0      # m - length (strong direction)
-BARRETTE_WIDTH = 0.8       # m - width
-BARRETTE_DEPTH = 15.0      # m - embedment depth
+BARRETTE_LENGTH = 3.0      # m - length (strong direction)
+BARRETTE_WIDTH = 1.5       # m - width
+BARRETTE_DEPTH = 10.0      # m - embedment depth
 
-# Soil Domain Size (multiples of barrette dimensions)
-DOMAIN_LATERAL = 5.0       # multiples of barrette characteristic dimension
-DOMAIN_DEPTH = 2.0         # multiples of embedment depth below base
+# Soil Domain Size (fixed dimensions in meters)
+DOMAIN_X = 20.0            # m - domain width in X direction
+DOMAIN_Y = 20.0            # m - domain width in Y direction
+DOMAIN_Z = 30.0            # m - total domain depth (from ground level to bottom)
 
 # Material Properties - Concrete (Barrette)
 E_CONCRETE = 30e6          # kN/m² - Young's modulus
@@ -25,7 +26,7 @@ GAMMA_SOIL = 18.0          # kN/m³ - unit weight
 # Mesh Density (number of elements)
 MESH_DENSITY_X = 20        # elements in x-direction
 MESH_DENSITY_Y = 20        # elements in y-direction
-MESH_DENSITY_Z = 30        # elements in z-direction
+MESH_DENSITY_Z = 20        # elements in z-direction (uniform density in all directions)
 
 # Loading
 LOAD_INCREMENTS = [100, 200, 500, 1000, 2000, 3000, 4000, 5000, 6000, 7000, 8000]  # kN

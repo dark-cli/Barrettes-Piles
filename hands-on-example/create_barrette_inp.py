@@ -10,12 +10,11 @@ import os
 # Import from config.py in the same directory
 from config import *
 
-# Calculate domain dimensions
-char_dim = max(BARRETTE_LENGTH, BARRETTE_WIDTH)
-domain_x = char_dim * DOMAIN_LATERAL
-domain_y = char_dim * DOMAIN_LATERAL
+# Use fixed domain dimensions
+domain_x = DOMAIN_X
+domain_y = DOMAIN_Y
 domain_z_top = 0.0
-domain_z_bottom = -(BARRETTE_DEPTH * (1 + DOMAIN_DEPTH))
+domain_z_bottom = -DOMAIN_Z
 
 print("Generating CalculiX input file for barrette analysis...")
 print(f"Barrette: {BARRETTE_LENGTH}m × {BARRETTE_WIDTH}m × {BARRETTE_DEPTH}m deep")
@@ -240,22 +239,34 @@ with open(output_file, 'w') as f:
     f.write("Nfront,2,2\n")  # Fix y-displacement at front (uy=0)
     f.write("Nback,2,2\n")  # Fix y-displacement at back (uy=0)
     
-    # Load step - apply first load increment
-    load_value = LOAD_INCREMENTS[0] if LOAD_INCREMENTS else 1000  # First load increment (kN)
+    # Create load steps for each load increment
     barrette_area = BARRETTE_LENGTH * BARRETTE_WIDTH  # m²
-    pressure = load_value / barrette_area  # kN/m² (positive = compressive downward)
     
-    f.write("*STEP\n")
-    f.write("*STATIC\n")
-    f.write("*DLOAD\n")
-    # Apply uniform pressure on barrette top surface
-    # P = pressure magnitude (positive = compressive, downward in -Z direction)
-    f.write(f"Sbarrette_top,P,{pressure}\n")
-    f.write("*NODE FILE\n")
-    f.write("U\n")  # Output displacements
-    f.write("*EL FILE\n")
-    f.write("S,E\n")  # Output stresses and strains
-    f.write("*END STEP\n")
+    if not LOAD_INCREMENTS:
+        LOAD_INCREMENTS = [1000]  # Default single load case
+    
+    print(f"\nCreating {len(LOAD_INCREMENTS)} load steps:")
+    
+    for step_num, load_value in enumerate(LOAD_INCREMENTS, 1):
+        pressure = load_value / barrette_area  # kN/m² (positive = compressive downward)
+        print(f"  Step {step_num}: {load_value} kN ({pressure:.2f} kN/m²)")
+        
+        f.write(f"*STEP,NAME=LOAD_{load_value}kN\n")
+        f.write("*STATIC\n")
+        f.write("*DLOAD\n")
+        # Apply uniform pressure on barrette top surface
+        # P = pressure magnitude (positive = compressive, downward in -Z direction)
+        f.write(f"Sbarrette_top,P,{pressure}\n")
+        f.write("*NODE FILE\n")
+        f.write("U\n")  # Output displacements
+        f.write("*EL FILE\n")
+        f.write("S,E\n")  # Output stresses and strains
+        if step_num == len(LOAD_INCREMENTS):  # Only print detailed output for last step
+            f.write("*EL PRINT,ELSET=EBARRETTE\n")
+            f.write("S,E\n")  # Output for barrette elements
+            f.write("*EL PRINT,ELSET=ESOIL\n")
+            f.write("S,E\n")  # Output for soil elements
+        f.write("*END STEP\n")
 
 print(f"\nCalculiX input file created: {output_file}")
 print(f"To run: cd CalculiX/ccx_2.22/src && ./ccx_2.22 -i ../../../barrette_analysis")
