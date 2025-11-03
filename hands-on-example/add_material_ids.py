@@ -89,35 +89,78 @@ def add_material_ids_to_vtk(vtk_file, barrette_elements, output_file=None):
         else:
             material_ids.append(2)  # Soil
     
+    # Find where CELL_DATA and MaterialID are
+    cell_data_idx = None
+    materialid_scalars_idx = None
+    materialid_lookup_idx = None
+    materialid_data_start = None
+    materialid_data_end = None
+    point_data_idx = None
+    
+    for i in range(cell_types_end, len(lines)):
+        if 'POINT_DATA' in lines[i]:
+            point_data_idx = i
+            break
+        if 'CELL_DATA' in lines[i] and cell_data_idx is None:
+            cell_data_idx = i
+        if 'SCALARS MaterialID' in lines[i]:
+            materialid_scalars_idx = i
+        if materialid_scalars_idx and 'LOOKUP_TABLE' in lines[i] and materialid_lookup_idx is None:
+            materialid_lookup_idx = i
+            materialid_data_start = i + 1
+            # Find where MaterialID data ends (next non-numeric line or next SCALARS/POINT_DATA)
+            for j in range(i + 1, point_data_idx if point_data_idx else len(lines)):
+                line_stripped = lines[j].strip()
+                if not line_stripped or line_stripped.isdigit() or (line_stripped.startswith('-') and line_stripped[1:].isdigit()):
+                    continue
+                else:
+                    materialid_data_end = j
+                    break
+    
     # Write modified VTK file
     with open(output_file, 'w') as f:
-        # Write everything up to and including CELL_TYPES section
-        for i in range(cell_types_end):
-            f.write(lines[i])
-        
-        # Check if CELL_DATA already exists after CELL_TYPES
-        has_cell_data = False
-        for i in range(cell_types_end, min(cell_types_end + 10, len(lines))):
-            if 'CELL_DATA' in lines[i]:
-                has_cell_data = True
-                break
-        
-        # Insert CELL_DATA section right after CELL_TYPES
-        if not has_cell_data:
-            f.write(f"CELL_DATA {num_cells}\n")
-        
-        f.write("SCALARS MaterialID int 1\n")
-        f.write("LOOKUP_TABLE default\n")
-        for mat_id in material_ids:
-            f.write(f"{mat_id}\n")
-        f.write("\n")
-        
-        # Write rest of file (from after CELL_TYPES)
-        for i in range(cell_types_end, len(lines)):
-            # Skip existing CELL_DATA header if it exists
-            if 'CELL_DATA' in lines[i] and not has_cell_data:
-                continue
-            f.write(lines[i])
+        # Write everything up to MaterialID data (or where it should be)
+        if materialid_data_start is not None:
+            # Replace existing MaterialID data
+            for i in range(materialid_data_start):
+                f.write(lines[i])
+            
+            # Write our MaterialID values
+            for mat_id in material_ids:
+                f.write(f"{mat_id}\n")
+            f.write("\n")
+            
+            # Write rest of file, skipping old MaterialID data
+            for i in range(materialid_data_end if materialid_data_end else materialid_data_start + num_cells, len(lines)):
+                f.write(lines[i])
+        else:
+            # No existing MaterialID, need to insert it
+            if cell_data_idx is None:
+                # Need to create CELL_DATA section
+                insert_pos = point_data_idx if point_data_idx else len(lines)
+                for i in range(insert_pos):
+                    f.write(lines[i])
+                f.write(f"CELL_DATA {num_cells}\n")
+                f.write("SCALARS MaterialID int 1\n")
+                f.write("LOOKUP_TABLE default\n")
+                for mat_id in material_ids:
+                    f.write(f"{mat_id}\n")
+                f.write("\n")
+                # Write rest
+                for i in range(insert_pos, len(lines)):
+                    f.write(lines[i])
+            else:
+                # CELL_DATA exists but no MaterialID - insert after CELL_DATA
+                for i in range(cell_data_idx + 1):
+                    f.write(lines[i])
+                f.write("SCALARS MaterialID int 1\n")
+                f.write("LOOKUP_TABLE default\n")
+                for mat_id in material_ids:
+                    f.write(f"{mat_id}\n")
+                f.write("\n")
+                # Write rest
+                for i in range(cell_data_idx + 1, len(lines)):
+                    f.write(lines[i])
     
     print(f"Added material IDs to: {output_file}")
     print(f"  Barrette elements (MaterialID=1): {sum(1 for m in material_ids if m == 1)}")

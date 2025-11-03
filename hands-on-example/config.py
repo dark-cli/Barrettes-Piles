@@ -23,6 +23,11 @@ E_SOIL = 10000             # kN/m² - Young's modulus
 NU_SOIL = 0.3              # Poisson's ratio
 GAMMA_SOIL = 18.0          # kN/m³ - unit weight
 
+# Mohr-Coulomb Plasticity Parameters
+COHESION = 15.0            # kN/m² - effective cohesion c'
+FRICTION_ANGLE = 25.0      # degrees - effective friction angle φ'
+DILATATION_ANGLE = 0.0     # degrees - dilation angle (0 = non-associative flow)
+
 # Mesh Density (number of elements)
 MESH_DENSITY_X = 20        # elements in x-direction
 MESH_DENSITY_Y = 20        # elements in y-direction

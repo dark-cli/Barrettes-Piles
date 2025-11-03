@@ -16,7 +16,7 @@ ParaView has built-in support for time series when opening multiple files. Use t
    ```
 
 2. **File → Open:**
-   - Navigate to: `hands-on-example/` directory
+   - Navigate to: `hands-on-example/results/` directory
    - **Select ALL 11 VTK files at once:**
      - `barrette_analysis.01.vtk`
      - `barrette_analysis.02.vtk`
@@ -44,7 +44,7 @@ ParaView has built-in support for time series when opening multiple files. Use t
 Some ParaView versions support file patterns:
 
 1. **File → Open**
-2. Navigate to `hands-on-example/` directory
+2. Navigate to `hands-on-example/results/` directory
 3. Look for "Pattern" or "Filter" option in file dialog
 4. Enter: `barrette_analysis.*.vtk`
 5. ParaView should detect all matching files as a series
@@ -90,6 +90,7 @@ Once files are loaded:
 If the time series method doesn't work, you can open files individually:
 
 ```bash
+cd results
 paraview barrette_analysis.01.vtk  # 100 kN
 paraview barrette_analysis.11.vtk  # 8000 kN
 ```

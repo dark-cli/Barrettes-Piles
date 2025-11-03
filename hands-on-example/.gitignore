@@ -3,16 +3,11 @@ __pycache__/
 *.pyc
 *.pyo
 
-# CalculiX output files
-*.frd
-*.dat
-*.12d
-*.sta
-*.cvg
-*.log
+# Input folder (generated files)
+input/*.inp
 
-# VTK files (large, regenerated on each run)
-*.vtk
+# Results folder (all output files)
+results/
 
 # Backup files
 *.backup
@@ -21,3 +16,12 @@ __pycache__/
 
 # Temporary files
 *.tmp
+
+# Legacy files (if moved from root)
+*.frd
+*.dat
+*.12d
+*.sta
+*.cvg
+*.log
+*.vtk

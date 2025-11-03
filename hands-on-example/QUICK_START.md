@@ -1,40 +1,41 @@
 # Quick Start Guide
 
-Get started with the barrette analysis in 3 simple steps:
+Get started with the barrette analysis in one simple step:
 
-## Step 1: Generate Input File
-
-```bash
-python3 create_barrette_inp.py
-```
-
-This creates `barrette_analysis.inp` with your model configuration.
-
-## Step 2: Run Analysis
+## Run Analysis
 
 ```bash
 ./run_analysis.sh
 ```
 
-Or manually:
-```bash
-cd ../tools/calculix/CalculiX/ccx_2.22/src
-./ccx_2.22 -i ../../../../hands-on-example/barrette_analysis
-```
+This script:
+1. Generates the CalculiX input file (`input/barrette_analysis.inp`)
+2. Runs the CalculiX analysis
+3. Converts results to VTK format
+4. Adds material IDs for visualization
 
-## Step 3: View Results
+## View Results
 
-After running `./run_analysis.sh`, you'll have `barrette_analysis.vtk`.
+After running `./run_analysis.sh`, all results are in the `results/` folder.
 
 **Open in ParaView:**
 ```bash
-paraview barrette_analysis.vtk
+cd results
+paraview
+# Then: File → Open → Select ALL .vtk files (barrette_analysis.01.vtk through .11.vtk)
 ```
 
-**Or any VTK viewer:**
-- The VTK file contains all results (displacements, stresses, strains)
-- Use ParaView filters to visualize different components
-- Apply "Warp by Vector" to see deformed shape
+**Key Files:**
+- `input/barrette_analysis.inp` - CalculiX input file (generated)
+- `results/barrette_analysis.01.vtk` through `.11.vtk` - VTK files for each load step
+- `results/barrette_analysis.vtk` - Single file (last load step)
+- `results/barrette_analysis.frd` - CalculiX results file
+
+**ParaView Tips:**
+- Select all VTK files → ParaView creates time series automatically!
+- Use time slider to switch between load cases
+- Color by MaterialID to see barrette vs soil
+- Apply "Warp by Vector" filter to see deformed shape
 
 ## Modify Parameters
 
@@ -44,6 +45,6 @@ Edit `config.py` to change:
 - Mesh density
 - Load values
 
-Then regenerate: `python3 create_barrette_inp.py`
+Then run: `./run_analysis.sh` (it will regenerate the input file automatically)
 
 That's it! 🎉

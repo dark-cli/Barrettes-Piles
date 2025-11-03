@@ -108,7 +108,8 @@ for node_id, x, y, z in nodes:
 print(f"Boundary nodes: bottom={len(bottom_nodes)}, top={len(top_nodes)}, barrette_top={len(barrette_top_nodes)}")
 
 # Write CalculiX input file
-output_file = "barrette_analysis.inp"
+os.makedirs("input", exist_ok=True)
+output_file = "input/barrette_analysis.inp"
 with open(output_file, 'w') as f:
     f.write("*HEADING\n")
     f.write("Barrette Pile Analysis - Linear Elastic\n")
@@ -199,6 +200,11 @@ with open(output_file, 'w') as f:
     f.write(f"{E_SOIL},{NU_SOIL}\n")
     f.write("*DENSITY\n")
     f.write(f"{GAMMA_SOIL}\n")
+    # Mohr-Coulomb plasticity - temporarily disabled for testing
+    # Uncomment below to enable Mohr-Coulomb (may cause convergence issues)
+    # f.write("*MOHR COULOMB\n")
+    # # Format: cohesion (kN/m²), friction angle (degrees), dilation angle (degrees)
+    # f.write(f"{COHESION},{FRICTION_ANGLE},{DILATATION_ANGLE}\n")
     
     # Solid sections
     f.write("*SOLID SECTION,ELSET=EBARRETTE,MATERIAL=CONCRETE\n")
@@ -210,26 +216,42 @@ with open(output_file, 'w') as f:
     # Define surface for barrette top (for pressure loading)
     # Find barrette elements with top face at z=0
     f.write("*SURFACE,TYPE=ELEMENT,NAME=Sbarrette_top\n")
-    # For C3D8 hex elements, face S6 is the top face (nodes 5,6,7,8)
+    # For C3D8 hex elements in CalculiX:
+    # S1 = bottom face (nodes 1,2,3,4)
+    # S2 = top face (nodes 5,6,7,8) ← THIS IS THE CORRECT FACE FOR TOP
+    # S3-S6 = side faces
     barrette_top_elements = []
     for elem in elements:
         elem_id, n1, n2, n3, n4, n5, n6, n7, n8, mat = elem
         if mat == 1:  # Barrette element
-            # Check if top face nodes are at z=0 and within barrette bounds
-            # Top face uses nodes n5, n6, n7, n8
+            # Check if top face nodes (n5, n6, n7, n8) are at z=0
+            # Top face uses nodes n5, n6, n7, n8 (face S2)
+            top_nodes_z = []
+            top_nodes_in_bounds = True
             for node_id in [n5, n6, n7, n8]:
                 if node_id in node_coord_dict:
                     x, y, z = node_coord_dict[node_id]
-                    # Check if this is top face at ground surface within barrette bounds
-                    if abs(z - 0.0) < 1e-6:
-                        if (barrette_x_min <= x <= barrette_x_max and
+                    top_nodes_z.append(z)
+                    # Check if node is within barrette bounds
+                    if not (barrette_x_min <= x <= barrette_x_max and
                             barrette_y_min <= y <= barrette_y_max):
-                            barrette_top_elements.append(elem_id)
-                            break
+                        top_nodes_in_bounds = False
+            
+            # Add element if all top nodes are at z=0 (or very close) 
+            # and element center (average of top node positions) is within barrette bounds
+            if len(top_nodes_z) == 4 and all(abs(z - 0.0) < 1e-3 for z in top_nodes_z):
+                # Calculate center of top face
+                center_x = sum(node_coord_dict[n][0] for n in [n5, n6, n7, n8] if n in node_coord_dict) / 4
+                center_y = sum(node_coord_dict[n][1] for n in [n5, n6, n7, n8] if n in node_coord_dict) / 4
+                
+                # Check if center is within bounds (more lenient than requiring all nodes)
+                if (barrette_x_min <= center_x <= barrette_x_max and
+                    barrette_y_min <= center_y <= barrette_y_max):
+                    barrette_top_elements.append(elem_id)
     
-    # Write surface definition (face S6 = top face of hex element)
+    # Write surface definition (face S2 = top face of hex element)
     for elem_id in barrette_top_elements:
-        f.write(f"{elem_id},S6\n")
+        f.write(f"{elem_id},S2\n")
     
     # Boundary conditions
     f.write("*BOUNDARY\n")
@@ -251,8 +273,13 @@ with open(output_file, 'w') as f:
         pressure = load_value / barrette_area  # kN/m² (positive = compressive downward)
         print(f"  Step {step_num}: {load_value} kN ({pressure:.2f} kN/m²)")
         
-        f.write(f"*STEP,NAME=LOAD_{load_value}kN\n")
+        f.write(f"*STEP\n")
         f.write("*STATIC\n")
+        # Time increment settings for linear analysis
+        # Format: initial time increment, total time, minimum increment, maximum increment
+        # For linear elastic: use simple increment settings
+        # For non-linear (with Mohr-Coulomb): use smaller increments for convergence
+        f.write("1.0,1.0,1.0,1.0\n")  # Linear: single step
         f.write("*DLOAD\n")
         # Apply uniform pressure on barrette top surface
         # P = pressure magnitude (positive = compressive, downward in -Z direction)

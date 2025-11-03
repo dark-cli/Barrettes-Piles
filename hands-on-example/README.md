@@ -12,6 +12,8 @@ This example demonstrates:
 
 **Important Limitations:**
 - ✅ **Linear elastic analysis only** - No plasticity or soil failure modeling
+  - Mohr-Coulomb plasticity is available but currently disabled due to convergence issues
+  - See `MOHR_COULOMB_NOTES.md` for details on enabling non-linear analysis
 - ✅ **Uniform mesh** - No adaptive refinement in high-stress areas
 - ✅ **Simplified material models** - Linear elastic soil and concrete
 - ✅ **Suitable for:** Learning, preliminary analysis, service load analysis
@@ -45,15 +47,19 @@ This example demonstrates:
 hands-on-example/
 ├── config.py                  # Configuration parameters (edit this!)
 ├── create_barrette_inp.py     # Generates CalculiX input file
+├── add_material_ids.py        # Adds material IDs to VTK files
 ├── run_analysis.sh            # Script to run analysis and export to VTK
 ├── requirements.txt           # Python dependencies
 ├── README.md                  # This file
-├── results/                   # Output directory
-│   └── calculix_output.log   # Analysis log file
-├── barrette_analysis.inp      # Generated CalculiX input file
-├── barrette_analysis.frd      # CalculiX results file (after running)
-├── barrette_analysis.dat      # CalculiX data file
-└── barrette_analysis.vtk      # VTK results file (ready for ParaView)
+├── input/                     # Input files (generated)
+│   └── barrette_analysis.inp  # CalculiX input file
+└── results/                   # All output files
+    ├── barrette_analysis.frd  # CalculiX results file
+    ├── barrette_analysis.dat  # CalculiX data file
+    ├── barrette_analysis.12d  # CalculiX 12d file
+    ├── barrette_analysis.vtk  # VTK file (last load step)
+    ├── barrette_analysis.01.vtk through .11.vtk  # VTK files per load step
+    └── calculix_output.log    # Analysis log file
 ```
 
 ## Quick Start
@@ -63,7 +69,7 @@ hands-on-example/
 ./run_analysis.sh
 ```
 
-This will create `barrette_analysis.vtk` which you can open in ParaView or any VTK viewer.
+This will create all result files in the `results/` folder. Open the `.vtk` files in ParaView to visualize results.
 
 ### Option 2: Step-by-Step
 

@@ -46,6 +46,12 @@
    - Try coloring by stress (S11, S22, S33)
    - Or by displacement magnitude
 
+5. **Surface with Edges:**
+   - The "Surface with Edges" option is not directly available for volumetric meshes
+   - **Solution**: Apply `Filters > Alphabetical > Extract Surface` first
+   - Then select "Surface with Edges" representation
+   - See `SURFACE_WITH_EDGES.md` for detailed instructions
+
 ### Why the Barrette Looks Small
 
 The barrette occupies only:
