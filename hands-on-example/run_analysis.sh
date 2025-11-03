@@ -92,20 +92,49 @@ else
     fi
 fi
 
-# Add material IDs to VTK file for better visualization
+# Add material IDs to VTK files for better visualization
 if [ "$VTK_CREATED" = true ] && [ -f "$SCRIPT_DIR/add_material_ids.py" ] && [ -f "$SCRIPT_DIR/barrette_analysis.inp" ]; then
-    echo "   Adding material IDs for ParaView visualization..."
-    python3 "$SCRIPT_DIR/add_material_ids.py" "$SCRIPT_DIR/barrette_analysis.inp" "$VTK_FILE" "$VTK_FILE" 2>/dev/null && echo "   ✓ Material IDs added - color by 'MaterialID' in ParaView"
+    echo "   Adding material IDs to VTK files for ParaView visualization..."
+    # Add MaterialID to each step file
+    for vtk_step in "$SCRIPT_DIR"/barrette_analysis.[0-9][0-9].vtk; do
+        if [ -f "$vtk_step" ]; then
+            python3 "$SCRIPT_DIR/add_material_ids.py" "$SCRIPT_DIR/barrette_analysis.inp" "$vtk_step" "$vtk_step" >/dev/null 2>&1
+        fi
+    done
+    # Also add to main file if it exists
+    if [ -f "$VTK_FILE" ]; then
+        python3 "$SCRIPT_DIR/add_material_ids.py" "$SCRIPT_DIR/barrette_analysis.inp" "$VTK_FILE" "$VTK_FILE" >/dev/null 2>&1
+    fi
+    echo "   ✓ Material IDs added to all VTK files"
 fi
+
 
 echo ""
 echo "[4/4] Complete!"
 echo ""
 echo "Output files:"
-echo "  - barrette_analysis.vtk (VTK format - ready for ParaView)"
+echo "  - barrette_analysis.01.vtk through .11.vtk (VTK files for each load step)"
+echo "  - barrette_analysis.vtk (single file: step 11 / 8000 kN)"
 echo "  - barrette_analysis.frd (CalculiX results file)"
 echo "  - barrette_analysis.dat (data file)"
 echo "  - results/calculix_output.log (log file)"
 echo ""
-echo "Open barrette_analysis.vtk in ParaView or any VTK-compatible viewer"
+echo "═══════════════════════════════════════════════════════════"
+echo "  🎯 RECOMMENDED: Open ALL .vtk files in ParaView"
+echo "     Select all 11 files → ParaView treats them as time series!"
+echo "═══════════════════════════════════════════════════════════"
+echo ""
+echo "  Steps:"
+echo "    1. paraview"
+echo "    2. File → Open"
+echo "    3. Select ALL: barrette_analysis.01.vtk through .11.vtk"
+echo "    4. Click OK → Time slider appears automatically!"
+echo ""
+echo "  Features:"
+echo "    • Use time slider to switch between load cases (1-11)"
+echo "    • Click play button for animation"
+echo "    • Color by MaterialID to see barrette vs soil"
+echo "    • Watch how displacement increases with load"
+echo ""
+echo "  See OPEN_IN_PARAVIEW.md for detailed instructions"
 

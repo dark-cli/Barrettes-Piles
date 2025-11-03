@@ -1,0 +1,23 @@
+# Python cache
+__pycache__/
+*.pyc
+*.pyo
+
+# CalculiX output files
+*.frd
+*.dat
+*.12d
+*.sta
+*.cvg
+*.log
+
+# VTK files (large, regenerated on each run)
+*.vtk
+
+# Backup files
+*.backup
+*~
+*.bak
+
+# Temporary files
+*.tmp
