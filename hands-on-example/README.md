@@ -1,6 +1,6 @@
-# Hands-On Example: Linear Elastic FEA Analysis of Barrette Piles
+# Hands-On Example: Barrette Pile Analysis with CalculiX
 
-This folder contains a practical Python implementation of finite element analysis for barrette piles using FEniCS.
+This folder contains a practical implementation of finite element analysis for barrette piles using **CalculiX**, a free and open-source FEA solver.
 
 ## Overview
 
@@ -8,7 +8,7 @@ This example demonstrates:
 - Linear elastic FEA analysis of barrette piles
 - Soil-structure interaction modeling
 - Load-displacement behavior under vertical loading
-- Basic post-processing and visualization
+- Preprocessing, solving, and post-processing workflow
 
 **Important Limitations:**
 - ✅ **Linear elastic analysis only** - No plasticity or soil failure modeling
@@ -21,122 +21,77 @@ This example demonstrates:
 
 ### Software Dependencies
 
-- Python 3.7 or higher
-- FEniCS (2019.1.0 or later)
-- NumPy
-- Matplotlib
-- SciPy
+- **CalculiX**: FEA solver (CCX) and pre/post-processor (CGX)
+  - Already installed in: `../tools/calculix/`
+  - See installation in: `../tools/calculix/README.md`
+- **Python 3.7+**: For generating input files
+- **NumPy**: For numerical operations (optional, only if extending scripts)
 
 ### Installation
 
-1. **Install FEniCS:**
+1. **CalculiX is already installed** in `../tools/calculix/`
 
-   For Linux/macOS:
+2. **Install Python dependencies** (if not already installed):
    ```bash
-   conda install -c conda-forge fenics
-   ```
-   
-   Or using Docker:
-   ```bash
-   docker pull quay.io/fenicsproject/stable
-   ```
-
-   For detailed installation instructions, see: https://fenicsproject.org/download/
-
-2. **Install other dependencies:**
-   ```bash
-   pip install -r requirements.txt
+   pip install numpy
    ```
 
 ## File Structure
 
 ```
 hands-on-example/
-├── barrette_fea.py        # Main analysis script
-├── visualize_mesh.py      # Mesh visualization (standalone)
-├── utils.py               # Utility functions
-├── config.py              # Configuration parameters
-├── test_setup.py          # Setup verification script
-├── requirements.txt       # Python dependencies
-├── README.md              # This file
-└── results/               # Output directory
-    ├── load_settlement_curve.png
-    ├── mesh_3d.png
-    └── results.txt
+├── config.py                  # Configuration parameters (edit this!)
+├── create_barrette_inp.py     # Generates CalculiX input file
+├── barrette_analysis.inp      # Generated CalculiX input file
+├── run_analysis.sh            # Script to run analysis
+├── visualize_results.sh       # Script to visualize results
+├── requirements.txt           # Python dependencies
+├── README.md                  # This file
+└── results/                   # Output directory
+    ├── barrette_analysis.frd  # Results file (after running)
+    └── barrette_analysis.dat   # Output data file
 ```
 
 ## Quick Start
 
-**TL;DR**: Just run the scripts - no setup needed!
+### Option 1: Run Everything (Easiest)
+
 ```bash
-./run_visualize_mesh.sh  # View mesh
-./run_analysis.sh         # Run analysis
+# Generate input file and run analysis
+./run_analysis.sh
+
+# Visualize results
+./visualize_results.sh
 ```
 
-See [QUICK_START.md](./QUICK_START.md) for more details.
+### Option 2: Step-by-Step
 
-## Usage
-
-### Basic Usage
-
-1. **Verify setup** (recommended first step):
+1. **Edit configuration** (optional):
    ```bash
-   python test_setup.py
+   # Edit config.py to modify parameters
+   nano config.py
    ```
-   This will check all dependencies and configuration.
 
-2. **Edit configuration** (optional):
-   Open `config.py` and modify parameters as needed:
-   - Barrette dimensions
-   - Material properties
-   - Load increments
-   - Mesh density
-
-3. **Visualize mesh** (optional, before running analysis):
-   
-   **Easiest way** (recommended):
+2. **Generate CalculiX input file**:
    ```bash
-   ./run_visualize_mesh.sh
+   python3 create_barrette_inp.py
    ```
-   
-   **Alternative** (if scripts don't work):
+
+3. **Run analysis**:
    ```bash
-   export PKG_CONFIG_PATH="$HOME/.conda/envs/fenics-env/lib/pkgconfig:$PKG_CONFIG_PATH"
-   ~/.conda/envs/fenics-env/bin/python visualize_mesh.py
+   cd ../tools/calculix/CalculiX/ccx_2.22/src
+   ./ccx_2.22 -i ../../../../hands-on-example/barrette_analysis
    ```
-   
-   This generates a 3D visualization of the mesh without running the full analysis.
-   
-   **Output:**
-   - Always saves: `results/mesh_3d.png` (static image)
-   - If display available: Opens interactive 3D window (rotate, zoom, pan)
-   - If plotly installed: `results/mesh_3d_interactive.html` (browser-based)
 
-4. **Run analysis:**
-
-   **Easiest way** (recommended):
+4. **Visualize results**:
    ```bash
-   ./run_analysis.sh
+   cd ../../../..
+   ./visualize_results.sh
    ```
-   
-   **Alternative** (if script doesn't work):
-   ```bash
-   export PKG_CONFIG_PATH="$HOME/.conda/envs/fenics-env/lib/pkgconfig:$PKG_CONFIG_PATH"
-   ~/.conda/envs/fenics-env/bin/python barrette_fea.py
-   ```
-   
-   **Note:** The shell scripts (`run_analysis.sh` and `run_visualize_mesh.sh`) automatically handle:
-   - Setting up the FEniCS environment variables
-   - Using the correct Python interpreter from the conda environment
-   - You don't need to activate conda or source any files manually
 
-5. **View results:**
-   - Load-settlement curve: `results/load_settlement_curve.png`
-   - Data: `results/results.txt`
+## Configuration
 
-### Configuration Options
-
-Key parameters in `config.py`:
+Edit `config.py` to modify:
 
 **Geometry:**
 - `BARRETTE_LENGTH`: Length of barrette (m)
@@ -155,136 +110,144 @@ Key parameters in `config.py`:
 **Loading:**
 - `LOAD_INCREMENTS`: List of load values (kN)
 
-## Understanding the Code
+## Understanding the Workflow
 
-### Main Components
+### 1. Input File Generation (`create_barrette_inp.py`)
 
-1. **`barrette_fea.py`**: Main analysis script
-   - Geometry and mesh generation
-   - Material property assignment
-   - Variational formulation
-   - Boundary conditions
-   - Loading and solving
-   - Post-processing
+This Python script:
+- Reads parameters from `config.py`
+- Generates nodes and elements
+- Defines materials (concrete and soil)
+- Applies boundary conditions
+- Sets up loading
+- Creates CalculiX `.inp` file
 
-2. **`utils.py`**: Helper functions
-   - `construct_D_matrix()`: Creates constitutive matrix
-   - `epsilon()`: Computes strain tensor
-   - `sigma()`: Computes stress tensor
-   - `extract_settlement()`: Extracts displacement at point
-   - `create_barrette_region()`: Marks barrette elements
+### 2. Analysis Execution (CalculiX CCX)
 
-3. **`config.py`**: Configuration parameters
-   - All analysis parameters in one place
+The solver:
+- Reads the `.inp` file
+- Assembles global stiffness matrix
+- Solves linear system
+- Outputs results to `.frd` and `.dat` files
 
-### Mathematical Formulation
+### 3. Visualization (ParaView)
 
-The analysis solves the linear elastic equilibrium equations:
+The results are visualized using **ParaView**:
+- Runs `./visualize_results.sh`
+- Automatically converts CalculiX `.frd` files to VTK format
+- High-quality visualization with excellent graphics
+- Advanced filtering capabilities
+- Export publication-quality images and animations
 
-$$[K]\{u\} = \{F\}$$
+**Note:** The script automatically uses CGX to export to VTK format, then opens ParaView.
 
-Where:
-- $[K]$ = global stiffness matrix (assembled from elements)
-- $\{u\}$ = displacement vector
-- $\{F\}$ = force vector
+## Model Details
 
-The variational form uses the weak form of equilibrium:
+### Geometry
+- Barrette: 1.0m × 0.8m × 15.0m deep (rectangular)
+- Domain: 5.0m × 5.0m × 45.0m deep
+- Barrette centered in domain
 
-$$\int_{\Omega} \boldsymbol{\sigma}(\mathbf{u}) : \boldsymbol{\epsilon}(\mathbf{v}) \, d\Omega = \int_{\Gamma} \mathbf{t} \cdot \mathbf{v} \, d\Gamma$$
+### Mesh
+- **13,671 nodes** and **12,000 elements**
+- Uniform hexahedral mesh (C3D8 elements)
+- 20 × 20 × 30 elements
 
-For linear elastic materials:
-$$\boldsymbol{\sigma} = \lambda \text{tr}(\boldsymbol{\epsilon}) \mathbf{I} + 2\mu \boldsymbol{\epsilon}$$
+### Boundary Conditions
+- **Bottom**: Fixed (all displacements = 0)
+- **Lateral faces**: Roller supports (zero horizontal displacement)
+- **Top**: Free (except where barrette load is applied)
 
-Where $\lambda$ and $\mu$ are Lame parameters.
+### Materials
+- **Concrete**: Linear elastic (E = 30 GPa, ν = 0.15)
+- **Soil**: Linear elastic (E = 10 MPa, ν = 0.3)
+
+### Loading
+- Vertical pressure applied to barrette top surface
+- Default: 100 kN (first increment from `LOAD_INCREMENTS`)
 
 ## Interpreting Results
 
-### Load-Settlement Curve
+### Output Files
 
-The output shows:
-- **Load (kN)**: Applied vertical load
-- **Settlement (mm)**: Vertical displacement at barrette top
+- **`barrette_analysis.dat`**: Text output with summary
+- **`barrette_analysis.frd`**: Binary results file for visualization
 
-**What to expect:**
-- Linear relationship (since analysis is linear elastic)
-- Settlement increases proportionally with load
-- No "failure" or ultimate capacity (linear elastic only)
+### Viewing Results in ParaView
 
-**Limitations:**
-- Real soil behavior is non-linear
-- This analysis does not capture:
-  - Soil yielding or failure
-  - Ultimate bearing capacity
-  - Progressive failure mechanisms
+After running `./visualize_results.sh`, ParaView will open with your results.
 
-### When to Use This Analysis
+**In ParaView:**
+- Use filters to view displacements, stresses, etc.
+- Apply "Warp by Vector" filter to see deformed shape
+- Change coloring to visualize different result components
+- Use slice/clip filters to see internal results
+- Export high-quality images and animations
 
-✅ **Suitable for:**
-- Preliminary design estimates
-- Service load analysis
-- Relative comparisons (different geometries)
-- Educational purposes
-- Understanding FEA workflow
+The script automatically converts CalculiX `.frd` files to VTK format using CGX before opening ParaView.
 
-❌ **Not suitable for:**
-- Ultimate bearing capacity determination
-- Failure analysis
-- Final design (without validation)
+## Extending the Example
+
+### Add Multiple Load Steps
+
+Edit `create_barrette_inp.py` to add multiple `*STEP` blocks for different load increments.
+
+### Add Non-Linear Material
+
+For Mohr-Coulomb soil model, modify the material definition:
+
+```python
+f.write("*MATERIAL,NAME=SOIL\n")
+f.write("*ELASTIC\n")
+f.write(f"{E_SOIL},{NU_SOIL}\n")
+f.write("*PLASTIC\n")
+f.write("*MOHR COULOMB\n")
+f.write(f"{COHESION},{FRICTION_ANGLE}\n")  # c', φ'
+```
+
+### Refine Mesh
+
+Increase `MESH_DENSITY_X/Y/Z` in `config.py` for finer mesh (takes longer to solve).
+
+## Comparison with FEniCS Version
+
+This CalculiX version replaces the previous FEniCS implementation:
+
+**Advantages:**
+- ✅ Industry-standard ABAQUS-like input format
+- ✅ Can extend to non-linear materials (Mohr-Coulomb built-in)
+- ✅ Can use commercial preprocessors (FreeCAD, Gmsh)
+- ✅ No Python dependencies for solver (standalone executable)
+
+**Similarities:**
+- Same geometry and material parameters
+- Same boundary conditions
+- Same linear elastic analysis approach
 
 ## Troubleshooting
 
-### Common Issues
+### CalculiX not found
+- Check that CalculiX is installed: `ls ../tools/calculix/CalculiX/ccx_2.22/src/ccx_2.22`
+- Add to PATH or use full path in scripts
 
-1. **FEniCS not found:**
-   - Ensure FEniCS is properly installed
-   - Check Python environment
+### CGX window doesn't open
+- Check display: `echo $DISPLAY`
+- Try: `DISPLAY=:0 ./cgx -v barrette_analysis.frd`
 
-2. **Memory errors:**
-   - Reduce mesh density in `config.py`
-   - Reduce number of load increments
-
-3. **Convergence issues:**
-   - This is linear analysis, should always converge
-   - Check boundary conditions
-   - Verify material properties are reasonable
-
-4. **Results seem unreasonable:**
-   - Verify material properties (especially $E$ values)
-   - Check domain size is adequate
-   - Ensure boundary conditions are correct
-
-## Next Steps
-
-To extend this example:
-
-1. **Add non-linear material models:**
-   - Implement Mohr-Coulomb plasticity
-   - Add return mapping algorithm
-
-2. **Improve mesh:**
-   - Add adaptive refinement
-   - Refine near barrette corners
-
-3. **Add features:**
-   - Consolidation analysis
-   - Time-dependent loading
-   - Group effects (multiple barrettes)
-
-4. **Validation:**
-   - Compare with analytical solutions
-   - Validate against commercial software
-   - Compare with field test data
+### Analysis fails
+- Check input file syntax: `head barrette_analysis.inp`
+- Verify boundary conditions are properly defined
+- Check material properties are reasonable
 
 ## References
 
-- FEniCS Project: https://fenicsproject.org/
-- FEniCS Documentation: https://fenicsproject.org/documentation/
-- See main guide: `../02-geotechnical-analysis/finite-element-analysis.md`
+- CalculiX Documentation: http://www.dhondt.de/
+- Main Guide: `../02-geotechnical-analysis/finite-element-analysis.md`
+- CalculiX Installation: `../tools/calculix/README.md`
 
 ## Notes
 
 - This is a **simplified educational example**
-- For production analysis, use validated commercial software
+- For production analysis, use validated commercial software or extend with proper non-linear models
 - Always validate results against established methods
 - Consult with experienced geotechnical engineers for design decisions
-
