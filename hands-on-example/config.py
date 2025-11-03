@@ -29,6 +29,7 @@ FRICTION_ANGLE = 25.0      # degrees - effective friction angle φ'
 DILATATION_ANGLE = 0.0     # degrees - dilation angle (0 = non-associative flow)
 
 # Mesh Density (number of elements)
+# Note: Deformation plasticity works with finer mesh (Mohr-Coulomb didn't)
 MESH_DENSITY_X = 20        # elements in x-direction
 MESH_DENSITY_Y = 20        # elements in y-direction
 MESH_DENSITY_Z = 20        # elements in z-direction (uniform density in all directions)

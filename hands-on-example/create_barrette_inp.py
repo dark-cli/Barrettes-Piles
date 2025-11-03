@@ -200,12 +200,24 @@ with open(output_file, 'w') as f:
     f.write(f"{E_SOIL},{NU_SOIL}\n")
     f.write("*DENSITY\n")
     f.write(f"{GAMMA_SOIL}\n")
-    # Mohr-Coulomb plasticity for non-linear soil behavior
-    f.write("*MOHR COULOMB\n")
-    # Format: friction angle (degrees), dilation angle (degrees), cohesion (kN/m²)
-    # Note: CalculiX expects: phi, psi, c (NOT c, phi, psi!)
-    # Using non-associative flow (dilation angle = 0) for stability
-    f.write(f"{FRICTION_ANGLE},{DILATATION_ANGLE},{COHESION}\n")
+    # Plasticity models - currently disabled for speed
+    # Deformation plasticity works but is VERY slow (enables nonlinear geometry)
+    # Mohr-Coulomb crashes in CalculiX 2.22
+    # For fast analysis, use linear elastic soil (commented out plasticity)
+    
+    # Option 1: Linear elastic (fast, recommended)
+    # No plasticity - comment out all plasticity models
+    
+    # Option 2: Deformation Plasticity (very slow - nonlinear geometry enabled)
+    # YIELD_STRESS = 2.0 * COHESION
+    # HARDENING_EXPONENT = 0.5
+    # ALPHA = 0.0
+    # f.write("*DEFORMATION PLASTICITY\n")
+    # f.write(f"{YIELD_STRESS},{HARDENING_EXPONENT},{ALPHA}\n")
+    
+    # Option 3: Mohr-Coulomb (crashes in CalculiX 2.22)
+    # f.write("*MOHR COULOMB\n")
+    # f.write(f"{FRICTION_ANGLE},{DILATATION_ANGLE},{COHESION}\n")
     
     # Solid sections
     f.write("*SOLID SECTION,ELSET=EBARRETTE,MATERIAL=CONCRETE\n")

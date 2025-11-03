@@ -44,6 +44,17 @@ echo ""
 
 # Step 3: Run CalculiX
 echo "[3/5] Running CalculiX analysis..."
+
+# Enable multi-core processing
+# CalculiX uses OpenMP for parallelization
+# Set number of threads to use (leave 1 core free for system)
+AVAILABLE_CORES=$(nproc)
+USE_CORES=$((AVAILABLE_CORES > 1 ? AVAILABLE_CORES - 1 : 1))
+export OMP_NUM_THREADS=$USE_CORES
+export CCX_NPROC_STIFFNESS=$USE_CORES
+export CCX_NPROC_RESULTS=$USE_CORES
+echo "   Using $USE_CORES CPU core(s) for parallel computation (OpenMP)"
+echo ""
 if [ ! -f "$CCX_EXE" ]; then
     echo "ERROR: CalculiX executable not found at: $CCX_EXE"
     echo "Please check CalculiX installation"
