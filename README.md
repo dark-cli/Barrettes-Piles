@@ -40,11 +40,15 @@ This resource provides a comprehensive guide to the geotechnical and structural 
 - Design workflow
 - References
 
-### [Hands-On Example](./hands-on-example/)
-- Python implementation using FEniCS
-- Linear elastic FEA analysis
-- Step-by-step code with documentation
-- See [README](./hands-on-example/README.md) for setup and usage
+### [Example Problem](./example-problem/)
+- **Real case study**: Based on Exim Bank Building, Ho Chi Minh City, Vietnam
+- **Complete data**: Geotechnical investigation, soil parameters, structural loads
+- **Analysis ready**: All parameters formatted for Plaxis 3D input
+- **Documentation**:
+  - [Problem description](./example-problem/README.md) - Full project overview
+  - [Geotechnical data](./example-problem/geotechnical-data.md) - Soil parameters and properties
+  - [Structural loads](./example-problem/structural-loads.md) - Load combinations and values
+  - [Case study source](./example-problem/case-study-source.md) - Original paper reference
 
 ## Resources
 
