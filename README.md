@@ -47,7 +47,8 @@ This resource provides a comprehensive guide to the geotechnical and structural 
 - **Documentation**:
   - [Problem description](./example-problem/README.md) - Full project overview
   - [Geotechnical data](./example-problem/geotechnical-data.md) - Soil parameters and properties
-  - [Structural loads](./example-problem/structural-loads.md) - Load combinations and values
+  - [Load cases](./example-problem/load-cases.md) - Individual pile loads for Plaxis 3D
+  - [Structural loads](./example-problem/structural-loads.md) - Column loads and combinations
   - [Case study source](./example-problem/case-study-source.md) - Original paper reference
 
 ## Resources

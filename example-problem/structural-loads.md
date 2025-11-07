@@ -2,6 +2,10 @@
 
 This document provides detailed load information for the barrette pile foundation design.
 
+**For individual pile load cases and Plaxis 3D input examples, see [load-cases.md](./load-cases.md).**
+
+---
+
 ## Load Summary Table
 
 | Load Type | Service Load (kN) | Ultimate Load (kN) | Notes |
@@ -156,23 +160,7 @@ This document provides detailed load information for the barrette pile foundatio
 
 ## Load Application in Plaxis 3D
 
-### Point Loads (Columns)
-
-For each column location:
-1. Create point load at barrette top
-2. Apply axial load (P) in vertical direction (negative Z)
-3. Apply moments (Mx, My) as concentrated moments
-4. Apply shear forces (Vx, Vy) as horizontal point loads
-
-**Typical Corner Column (Service):**
-```
-Point Load at (x, y, z = 0):
-  Fz = -8,000 kN
-  Mx = 300 kN·m
-  My = 200 kN·m
-  Fx = 150 kN
-  Fy = 100 kN
-```
+For detailed load application examples and individual pile load cases, see [load-cases.md](./load-cases.md).
 
 ### Distributed Loads (Core Wall)
 
